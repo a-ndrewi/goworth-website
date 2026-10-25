@@ -1,4 +1,4 @@
-import { CalendarDays, Heart, Sparkles, Wallet } from 'lucide-react'
+import { CalendarDays, Heart, Wallet } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { Phone } from '../components/Phone'
@@ -41,16 +41,7 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
         <div className="text-center lg:text-left">
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-1 pr-3.5 pl-1.5 text-sm text-ink/90 backdrop-blur">
-              <span className="flex size-6 items-center justify-center rounded-full bg-gradient-to-br from-brand to-teal">
-                <Sparkles className="size-3.5 text-white" />
-              </span>
-              {t.hero.badge}
-            </span>
-          </motion.div>
-
-          <h1 className="mt-7 font-display text-[clamp(3.2rem,8vw,6.2rem)] leading-[0.95] font-extrabold tracking-[-0.035em] text-white">
+          <h1 className="font-display text-[clamp(3.2rem,8vw,6.2rem)] leading-[0.95] font-extrabold tracking-[-0.035em] text-white">
             {[t.hero.title1, t.hero.title2, t.hero.title3].map((word, n) => (
               <motion.span
                 key={word}

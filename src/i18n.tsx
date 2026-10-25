@@ -5,7 +5,6 @@ export type Lang = 'en' | 'ro'
 const en = {
   nav: { features: 'Features', how: 'How it works', watch: 'Watch', faq: 'FAQ', download: 'Get the app' },
   hero: {
-    badge: 'For iPhone and Android',
     title1: 'Discover.',
     title2: 'Plan.',
     title3: 'Go.',
@@ -167,7 +166,6 @@ export type Dict = typeof en
 const ro: Dict = {
   nav: { features: 'Funcții', how: 'Cum funcționează', watch: 'Video', faq: 'Întrebări', download: 'Descarcă' },
   hero: {
-    badge: 'Pentru iPhone și Android',
     title1: 'Descoperă.',
     title2: 'Planifică.',
     title3: 'Pleacă.',
