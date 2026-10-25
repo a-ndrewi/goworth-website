@@ -1,0 +1,88 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/bricolage-grotesque';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* GoWorth dark palette, from the app's design tokens. */
+  --color-night: #070c16;
+  --color-surface: #0e1626;
+  --color-raised: #18233a;
+  --color-line: #253149;
+  --color-ink: #e8edf5;
+  --color-muted: #98a2b3;
+  --color-brand: #5b86f5;
+  --color-brand-deep: #2457e6;
+  --color-teal: #2dbdb5;
+  --color-green: #22b98a;
+  --color-orange: #f6ae55;
+  --color-pink: #f07088;
+  --color-purple: #8f82e6;
+
+  --animate-marquee: marquee 70s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-night text-ink font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-brand/40 text-white;
+  }
+}
+
+@utility text-gradient {
+  background: linear-gradient(100deg, #9db9ff 0%, #5b86f5 45%, #2dbdb5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility grid-fade {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 75%);
+}
+
+@utility pause-on-hover {
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
