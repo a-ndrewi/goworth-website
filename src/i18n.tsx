@@ -142,12 +142,24 @@ const en = {
     scanHint: 'Point your phone camera at the code.',
   },
   footer: {
-    tagline: 'Discover. Plan. Go.',
     product: 'Product',
     get: 'Download',
-    credits: 'Destination photos: Wikimedia Commons, CC0. Map data © OpenStreetMap contributors.',
+    legal: 'Legal',
     rights: 'All rights reserved.',
     madeIn: 'Made with care in Romania.',
+  },
+  legal: {
+    back: 'Back to home',
+    eyebrow: 'Legal',
+    updated: 'Last updated',
+    contents: 'On this page',
+    website: 'This website',
+    websiteBody:
+      'Destination photos on this site come from Wikimedia Commons and are released under CC0. Map data shown in the app captures is © OpenStreetMap contributors. Fonts: Inter and Bricolage Grotesque, SIL Open Font License. Icons: Lucide, ISC License. App captures and product videos © GoWorth.',
+    photos: 'Photo credits',
+    place: 'Place',
+    creator: 'Creator',
+    license: 'License',
   },
 }
 
@@ -293,12 +305,24 @@ const ro: Dict = {
     scanHint: 'Îndreaptă camera telefonului spre cod.',
   },
   footer: {
-    tagline: 'Descoperă. Planifică. Pleacă.',
     product: 'Produs',
     get: 'Descarcă',
-    credits: 'Fotografii destinații: Wikimedia Commons, CC0. Date hartă © contribuitorii OpenStreetMap.',
+    legal: 'Legal',
     rights: 'Toate drepturile rezervate.',
     madeIn: 'Făcută cu grijă în România.',
+  },
+  legal: {
+    back: 'Înapoi la pagina principală',
+    eyebrow: 'Legal',
+    updated: 'Ultima actualizare',
+    contents: 'Pe această pagină',
+    website: 'Acest site',
+    websiteBody:
+      'Fotografiile destinațiilor de pe acest site provin de pe Wikimedia Commons și sunt publicate sub licența CC0. Datele de hartă din capturile aplicației sunt © contribuitorii OpenStreetMap. Fonturi: Inter și Bricolage Grotesque, SIL Open Font License. Iconițe: Lucide, licența ISC. Capturile aplicației și videoclipurile de prezentare © GoWorth.',
+    photos: 'Credite foto',
+    place: 'Loc',
+    creator: 'Autor',
+    license: 'Licență',
   },
 }
 

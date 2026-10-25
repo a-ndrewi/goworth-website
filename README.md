@@ -30,6 +30,7 @@ npm run build
 - `public/video`: the two vertical product ads, re-encoded at 720×1280 for the web.
 - `public/photos`: destination photos from Wikimedia Commons, all CC0. Sources and creators are in `public/photos/provenance.json`.
 - All copy lives in [`src/i18n.tsx`](src/i18n.tsx).
+- `src/legal/legal.ts` and `legal-ro.ts` are copied from the app (`goworth/src/data`). Keep them in sync when the app's legal texts change. They open at `#/legal/privacy`, `terms`, `subscriptions` and `credits`.
 
 ## Deploy
 

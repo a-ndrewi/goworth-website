@@ -1,18 +1,19 @@
 import { links } from '../config'
 import { Logo } from '../components/ui'
 import { useI18n } from '../i18n'
+import { getLegalDocument, legalHref, legalOrder } from '../legal'
 
 const year = new Date().getFullYear()
 
 export function Footer() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   return (
     <footer className="border-t border-white/10">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr]">
-        <div>
-          <Logo />
-          <p className="mt-4 font-display text-lg text-ink">{t.footer.tagline}</p>
-          <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted">{t.footer.credits}</p>
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:grid-cols-3 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="sm:col-span-3 md:col-span-1">
+          <a href="#top" aria-label="GoWorth home">
+            <Logo />
+          </a>
         </div>
         <div>
           <p className="text-sm font-semibold text-white">{t.footer.product}</p>
@@ -44,6 +45,18 @@ export function Footer() {
                 Google Play
               </a>
             </li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-sm font-semibold text-white">{t.footer.legal}</p>
+          <ul className="mt-4 space-y-3 text-sm text-muted">
+            {legalOrder.map((id) => (
+              <li key={id}>
+                <a href={legalHref(id)} className="transition hover:text-white">
+                  {getLegalDocument(id, lang).title}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
