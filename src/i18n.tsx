@@ -146,7 +146,6 @@ const en = {
     get: 'Download',
     legal: 'Legal',
     rights: 'All rights reserved.',
-    madeIn: 'Made with care in Romania.',
   },
   legal: {
     back: 'Back to home',
@@ -309,7 +308,6 @@ const ro: Dict = {
     get: 'Descarcă',
     legal: 'Legal',
     rights: 'Toate drepturile rezervate.',
-    madeIn: 'Făcută cu grijă în România.',
   },
   legal: {
     back: 'Înapoi la pagina principală',

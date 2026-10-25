@@ -61,11 +61,10 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-muted sm:flex-row sm:justify-between sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-muted sm:px-6">
           <p>
             © {year} GoWorth. {t.footer.rights}
           </p>
-          <p>{t.footer.madeIn}</p>
         </div>
       </div>
     </footer>
