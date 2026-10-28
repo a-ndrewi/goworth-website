@@ -12,6 +12,7 @@ import { Navbar } from './sections/Navbar'
 import { PhotoMarquee } from './sections/PhotoMarquee'
 import { Steps } from './sections/Steps'
 import { Videos } from './sections/Videos'
+import { Wheel } from './sections/Wheel'
 
 /** `#/legal/<id>` opens a legal document; any other hash is an anchor on the home page. */
 function legalRoute(hash: string): LegalDocumentId | null {
@@ -57,6 +58,7 @@ export default function App() {
             <Steps />
             <Videos />
             <Bento />
+            <Wheel />
             <Faq />
             <FinalCta />
           </>

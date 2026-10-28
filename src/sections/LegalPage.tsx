@@ -42,9 +42,7 @@ export function LegalPage({ id }: { id: LegalDocumentId }) {
         <motion.header key={`${id}-${lang}`} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} className="mt-12 max-w-3xl">
           <p className="text-sm font-semibold tracking-[0.16em] text-brand uppercase">{t.legal.eyebrow}</p>
           <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">{doc.title}</h1>
-          <p className="mt-4 text-sm text-muted">
-            {t.legal.updated}: {doc.updated}
-          </p>
+          <p className="mt-4 text-sm text-muted">{doc.updated}</p>
         </motion.header>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[220px_1fr] lg:gap-16">

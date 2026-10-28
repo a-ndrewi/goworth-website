@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from '
 export type Lang = 'en' | 'ro'
 
 const en = {
-  nav: { features: 'Features', how: 'How it works', watch: 'Watch', faq: 'FAQ', download: 'Get the app' },
+  nav: { features: 'Features', how: 'How it works', watch: 'Watch', premium: 'Premium', faq: 'FAQ', download: 'Get the app' },
   hero: {
     title1: 'Discover.',
     title2: 'Plan.',
@@ -104,13 +104,35 @@ const en = {
     language: { title: 'Your language and currency', body: 'English or Română, and the currency you think in.' },
     offline: { title: 'Photos that always load', body: 'Destination photos ship with the app, credited to their Wikimedia Commons authors.' },
   },
+  wheel: {
+    eyebrow: 'Premium, for free',
+    title: 'Spin the daily wheel. Win Premium.',
+    lead: 'GoWorth sells nothing. Premium, with unlimited trips and saves, can only be won: one free spin every 24 hours for every account.',
+    labels: { lifetime: 'Lifetime', month: '1 month', none: 'Tomorrow' },
+    prizes: [
+      { name: 'Premium for 1 month', odds: '1 in 100', pct: '1%' },
+      { name: 'Lifetime Premium', odds: '1 in 5,000', pct: '0.02%' },
+    ],
+    chance: 'chance per spin',
+    points: [
+      'No purchases, subscriptions or renewals, so there is nothing to cancel',
+      'One spin every 24 hours, timed on our server, not your device clock',
+      'A month won while Premium is active is added after its end date',
+      'Free plan: 1 new trip and 5 new saved places every month',
+    ],
+    rules: 'Read the Premium & wheel rules',
+  },
   faq: {
     eyebrow: 'FAQ',
     title: 'Questions, answered.',
     items: [
       {
         q: 'Is GoWorth free?',
-        a: 'Yes. The Free plan includes one new trip, five new places and five new destinations every month. A membership for unlimited trips and saves is on the way.',
+        a: 'Yes, completely. Nothing in GoWorth costs money. The Free plan includes one new trip and five new saved places every month, and Premium, with unlimited trips and saves, can only be won on the daily wheel.',
+      },
+      {
+        q: 'How does the Premium wheel work?',
+        a: 'Every signed-in account gets one free spin every 24 hours. Each spin has a 1 in 100 chance of Premium for 1 month and a 1 in 5,000 chance of Lifetime Premium; a month won while Premium is active is added after its end date. There are no purchases, subscriptions or automatic renewals. The full Premium & wheel rules are linked in the footer.',
       },
       {
         q: 'Do I need an account?',
@@ -149,7 +171,6 @@ const en = {
   legal: {
     back: 'Back to home',
     eyebrow: 'Legal',
-    updated: 'Last updated',
     contents: 'On this page',
     website: 'This website',
     websiteBody:
@@ -164,7 +185,7 @@ const en = {
 export type Dict = typeof en
 
 const ro: Dict = {
-  nav: { features: 'Funcții', how: 'Cum funcționează', watch: 'Video', faq: 'Întrebări', download: 'Descarcă' },
+  nav: { features: 'Funcții', how: 'Cum funcționează', watch: 'Video', premium: 'Premium', faq: 'Întrebări', download: 'Descarcă' },
   hero: {
     title1: 'Descoperă.',
     title2: 'Planifică.',
@@ -265,13 +286,35 @@ const ro: Dict = {
     language: { title: 'Limba și moneda ta', body: 'English sau Română, și moneda în care gândești.' },
     offline: { title: 'Fotografii care se încarcă mereu', body: 'Fotografiile destinațiilor vin cu aplicația, creditate autorilor de pe Wikimedia Commons.' },
   },
+  wheel: {
+    eyebrow: 'Premium, gratuit',
+    title: 'Învârte roata zilnică. Câștigă Premium.',
+    lead: 'GoWorth nu vinde nimic. Premium, cu călătorii și salvări nelimitate, se poate doar câștiga: o învârtire gratuită la fiecare 24 de ore, pentru fiecare cont.',
+    labels: { lifetime: 'Pe viață', month: '1 lună', none: 'Mâine' },
+    prizes: [
+      { name: 'Premium pe 1 lună', odds: '1 la 100', pct: '1%' },
+      { name: 'Premium Pe viață', odds: '1 la 5.000', pct: '0,02%' },
+    ],
+    chance: 'șansă la fiecare învârtire',
+    points: [
+      'Fără cumpărături, abonamente sau reînnoiri, deci nimic de anulat',
+      'O învârtire la 24 de ore, cronometrată pe serverul nostru, nu pe ceasul telefonului',
+      'O lună câștigată cât Premium e activ se adaugă după data de expirare',
+      'Planul Gratuit: 1 călătorie nouă și 5 locuri noi salvate în fiecare lună',
+    ],
+    rules: 'Citește regulile Premium și ale roții',
+  },
   faq: {
     eyebrow: 'Întrebări',
     title: 'Întrebări, cu răspunsuri.',
     items: [
       {
         q: 'GoWorth este gratuită?',
-        a: 'Da. Planul Gratuit include o călătorie nouă, cinci locuri noi și cinci destinații noi în fiecare lună. Un abonament pentru călătorii și salvări nelimitate vine în curând.',
+        a: 'Da, complet. Nimic din GoWorth nu costă bani. Planul Gratuit include o călătorie nouă și cinci locuri noi salvate în fiecare lună, iar Premium, cu călătorii și salvări nelimitate, se poate câștiga doar la roata zilnică.',
+      },
+      {
+        q: 'Cum funcționează roata Premium?',
+        a: 'Fiecare cont conectat are o învârtire gratuită la fiecare 24 de ore. Fiecare învârtire are o șansă de 1 la 100 pentru Premium pe 1 lună și de 1 la 5.000 pentru Premium Pe viață; o lună câștigată cât Premium e activ se adaugă după data de expirare. Nu există cumpărături, abonamente sau reînnoiri automate. Regulile Premium și ale roții sunt în subsolul paginii.',
       },
       {
         q: 'Am nevoie de cont?',
@@ -310,7 +353,6 @@ const ro: Dict = {
   legal: {
     back: 'Înapoi la pagina principală',
     eyebrow: 'Legal',
-    updated: 'Ultima actualizare',
     contents: 'Pe această pagină',
     website: 'Acest site',
     websiteBody:

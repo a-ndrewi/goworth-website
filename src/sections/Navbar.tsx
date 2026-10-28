@@ -38,6 +38,7 @@ export function Navbar() {
     { href: '#features', label: t.nav.features },
     { href: '#how', label: t.nav.how },
     { href: '#watch', label: t.nav.watch },
+    { href: '#premium', label: t.nav.premium },
     { href: '#faq', label: t.nav.faq },
   ]
 
