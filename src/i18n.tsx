@@ -125,7 +125,7 @@ const en = {
     },
     weather: {
       title: 'Weather at a glance',
-      body: 'Every city on a trip and on the map shows the temperature there right now, from Open-Meteo.',
+      body: 'Trip days, city pages and discovery cards show the temperature there right now, from Open-Meteo.',
     },
     reminders: {
       title: 'Reminders, only the useful ones',
@@ -225,7 +225,7 @@ const en = {
     contents: 'On this page',
     website: 'This website',
     websiteBody:
-      'Destination photos on this site come from Wikimedia Commons and are released under CC0. Map data shown in the app captures is © OpenStreetMap contributors. Fonts: Inter and Bricolage Grotesque, SIL Open Font License. Icons: Lucide, ISC License. App captures and product videos © GoWorth.',
+      'Destination photos on this site come from Wikimedia Commons and are released under CC0. Map data shown in the app captures is © OpenStreetMap contributors. Weather in the app is from Open-Meteo, CC BY 4.0. Fonts: Inter and Bricolage Grotesque, SIL Open Font License. Icons: Lucide, ISC License. App captures and product videos © GoWorth.',
     photos: 'Photo credits',
     place: 'Place',
     creator: 'Creator',
@@ -358,7 +358,7 @@ const ro: Dict = {
     },
     weather: {
       title: 'Vremea dintr-o privire',
-      body: 'Fiecare oraș din călătorie și de pe hartă arată temperatura de acolo chiar acum, de la Open-Meteo.',
+      body: 'Zilele călătoriei, paginile orașelor și cardurile de descoperire arată temperatura de acolo chiar acum, de la Open-Meteo.',
     },
     reminders: {
       title: 'Remindere, doar cele utile',
@@ -458,7 +458,7 @@ const ro: Dict = {
     contents: 'Pe această pagină',
     website: 'Acest site',
     websiteBody:
-      'Fotografiile destinațiilor de pe acest site provin de pe Wikimedia Commons și sunt publicate sub licența CC0. Datele de hartă din capturile aplicației sunt © contribuitorii OpenStreetMap. Fonturi: Inter și Bricolage Grotesque, SIL Open Font License. Iconițe: Lucide, licența ISC. Capturile aplicației și videoclipurile de prezentare © GoWorth.',
+      'Fotografiile destinațiilor de pe acest site provin de pe Wikimedia Commons și sunt publicate sub licența CC0. Datele de hartă din capturile aplicației sunt © contribuitorii OpenStreetMap. Vremea din aplicație provine de la Open-Meteo, CC BY 4.0. Fonturi: Inter și Bricolage Grotesque, SIL Open Font License. Iconițe: Lucide, licența ISC. Capturile aplicației și videoclipurile de prezentare © GoWorth.',
     photos: 'Credite foto',
     place: 'Loc',
     creator: 'Autor',
