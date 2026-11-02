@@ -22,6 +22,8 @@ export function Footer() {
               ['#features', t.nav.features],
               ['#how', t.nav.how],
               ['#watch', t.nav.watch],
+              ['#new', t.nav.new],
+              ['#premium', t.nav.premium],
               ['#faq', t.nav.faq],
             ].map(([href, label]) => (
               <li key={href}>

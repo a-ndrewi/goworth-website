@@ -12,6 +12,8 @@ import { Navbar } from './sections/Navbar'
 import { PhotoMarquee } from './sections/PhotoMarquee'
 import { Steps } from './sections/Steps'
 import { Videos } from './sections/Videos'
+import { Extras } from './sections/Extras'
+import { Plans } from './sections/Plans'
 import { Wheel } from './sections/Wheel'
 
 /** `#/legal/<id>` opens a legal document; any other hash is an anchor on the home page. */
@@ -58,6 +60,8 @@ export default function App() {
             <Steps />
             <Videos />
             <Bento />
+            <Extras />
+            <Plans />
             <Wheel />
             <Faq />
             <FinalCta />

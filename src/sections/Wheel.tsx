@@ -151,7 +151,7 @@ export function Wheel() {
   const { t } = useI18n()
   const w = t.wheel
   return (
-    <section id="premium" className="relative py-24 sm:py-32">
+    <section id="wheel" className="relative py-16 sm:py-24">
       <div className="pointer-events-none absolute inset-x-0 top-1/3 mx-auto h-96 max-w-3xl rounded-full bg-[#F5C451]/[0.07] blur-3xl" />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading eyebrow={w.eyebrow} title={w.title} lead={w.lead} />

@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from '
 export type Lang = 'en' | 'ro'
 
 const en = {
-  nav: { features: 'Features', how: 'How it works', watch: 'Watch', premium: 'Premium', faq: 'FAQ', download: 'Get the app' },
+  nav: { features: 'Features', how: 'How it works', watch: 'Watch', new: 'New', premium: 'Premium', faq: 'FAQ', download: 'Get the app' },
   hero: {
     title1: 'Discover.',
     title2: 'Plan.',
@@ -104,10 +104,53 @@ const en = {
     language: { title: 'Your language and currency', body: 'English or Română, and the currency you think in.' },
     offline: { title: 'Photos that always load', body: 'Destination photos ship with the app, credited to their Wikimedia Commons authors.' },
   },
+  extras: {
+    eyebrow: 'New in GoWorth',
+    title: 'Your trips, long after you land.',
+    lead: 'A passport that fills with every trip, live weather where you are going, a boarding pass on your home screen and reminders that know when to speak up.',
+    passport: {
+      title: 'A visa for every country',
+      body: 'Finish a trip and its countries arrive as visas in your own passport, with an entry stamp for every return visit. Turn the pages to relive where you have been.',
+      label: 'Passport',
+      entries: 'entries',
+      stamp: 'Entry',
+    },
+    widget: {
+      title: 'Your trip as a boarding pass',
+      body: 'The iPhone home screen widget shows the current trip as a boarding pass: city codes, the day’s plans and a timeline, in light and dark.',
+      from: 'From',
+      to: 'To',
+      day: 'Day 2 of 5',
+      plans: ['Louvre Museum', 'Lunch in Le Marais', 'Seine at sunset'],
+    },
+    weather: {
+      title: 'Weather at a glance',
+      body: 'Every city on a trip and on the map shows the temperature there right now, from Open-Meteo.',
+    },
+    reminders: {
+      title: 'Reminders, only the useful ones',
+      body: 'Know when your daily spin is ready, get a nudge to plan the next trip and, if you opt in, a heads-up when something worth a look is nearby. Each one has its own switch.',
+    },
+  },
+  plans: {
+    eyebrow: 'GoWorth Premium',
+    title: 'Travel without limits.',
+    lead: 'The Free plan covers 1 new trip and 5 new saved places every month. Premium removes the limits, on every device signed in to your account.',
+    perks: ['Unlimited trips every month', 'Unlimited saved places', 'Your full visa passport', 'Help an independent travel app keep growing'],
+    bestValue: 'Best value',
+    items: [
+      { id: 'monthly', name: 'Monthly', note: 'Billed every month', unit: 'Renews monthly' },
+      { id: 'yearly', name: 'Yearly', note: 'Billed once a year', unit: 'Renews yearly' },
+      { id: 'lifetime', name: 'Lifetime', note: 'Pay once, yours forever', unit: 'One payment' },
+    ],
+    priceNote: 'Prices are shown in the app, in your local currency, before you buy.',
+    fine: 'Bought through the App Store or Google Play. Subscriptions renew automatically at the same price until you cancel in your store settings, at least 24 hours before the period ends. Lifetime is a single payment with no renewal.',
+    rules: 'Read the Premium & wheel rules',
+  },
   wheel: {
-    eyebrow: 'Premium, for free',
+    eyebrow: 'Or win it for free',
     title: 'Spin the daily wheel. Win Premium.',
-    lead: 'GoWorth sells nothing. Premium, with unlimited trips and saves, can only be won: one free spin every 24 hours for every account.',
+    lead: 'Every account gets one free spin every 24 hours, with or without a subscription. Buying Premium never changes the odds.',
     labels: { lifetime: 'Lifetime', month: '1 month', none: 'Tomorrow' },
     prizes: [
       { name: 'Premium for 1 month', odds: '1 in 100', pct: '1%' },
@@ -115,10 +158,10 @@ const en = {
     ],
     chance: 'chance per spin',
     points: [
-      'No purchases, subscriptions or renewals, so there is nothing to cancel',
+      'The wheel never asks for payment',
       'One spin every 24 hours, timed on our server, not your device clock',
       'A month won while Premium is active is added after its end date',
-      'Free plan: 1 new trip and 5 new saved places every month',
+      'Won and bought Premium count together: you get whichever lasts longer',
     ],
     rules: 'Read the Premium & wheel rules',
   },
@@ -128,11 +171,19 @@ const en = {
     items: [
       {
         q: 'Is GoWorth free?',
-        a: 'Yes, completely. Nothing in GoWorth costs money. The Free plan includes one new trip and five new saved places every month, and Premium, with unlimited trips and saves, can only be won on the daily wheel.',
+        a: 'Yes. The app is free to download and use. The Free plan includes one new trip and five new saved places every month. Premium removes these limits: you can buy it monthly, yearly or once for Lifetime, or win it on the daily wheel.',
+      },
+      {
+        q: 'How do I buy or cancel Premium?',
+        a: 'Premium is bought in the app through the App Store or Google Play, with the price shown in your currency before you confirm. You need to be signed in, so Premium follows your account to every device, and Restore purchases brings it back on a new phone. Subscriptions renew automatically until you cancel in your App Store or Google Play settings, at least 24 hours before the period ends; you keep Premium until the end of the period you paid for. Refunds are handled by Apple or Google.',
       },
       {
         q: 'How does the Premium wheel work?',
-        a: 'Every signed-in account gets one free spin every 24 hours. Each spin has a 1 in 100 chance of Premium for 1 month and a 1 in 5,000 chance of Lifetime Premium; a month won while Premium is active is added after its end date. There are no purchases, subscriptions or automatic renewals. The full Premium & wheel rules are linked in the footer.',
+        a: 'Every signed-in account gets one free spin every 24 hours, with or without a subscription. Each spin has a 1 in 100 chance of Premium for 1 month and a 1 in 5,000 chance of Lifetime Premium; a month won while Premium is active is added after its end date. Buying Premium does not change the odds. The full Premium & wheel rules are linked in the footer.',
+      },
+      {
+        q: 'How do I earn visas in my passport?',
+        a: 'When a planned trip reaches its end date, every country it passed through is added to your passport as a visa, and a return visit adds an entry stamp. Free accounts collect visas too; Premium opens the passport so you can see them.',
       },
       {
         q: 'Do I need an account?',
@@ -185,7 +236,7 @@ const en = {
 export type Dict = typeof en
 
 const ro: Dict = {
-  nav: { features: 'Funcții', how: 'Cum funcționează', watch: 'Video', premium: 'Premium', faq: 'Întrebări', download: 'Descarcă' },
+  nav: { features: 'Funcții', how: 'Cum funcționează', watch: 'Video', new: 'Noutăți', premium: 'Premium', faq: 'Întrebări', download: 'Descarcă' },
   hero: {
     title1: 'Descoperă.',
     title2: 'Planifică.',
@@ -286,10 +337,53 @@ const ro: Dict = {
     language: { title: 'Limba și moneda ta', body: 'English sau Română, și moneda în care gândești.' },
     offline: { title: 'Fotografii care se încarcă mereu', body: 'Fotografiile destinațiilor vin cu aplicația, creditate autorilor de pe Wikimedia Commons.' },
   },
+  extras: {
+    eyebrow: 'Nou în GoWorth',
+    title: 'Călătoriile tale, mult după aterizare.',
+    lead: 'Un pașaport care se umple cu fiecare călătorie, vremea de acum la destinație, o carte de îmbarcare pe ecranul principal și remindere care știu când să apară.',
+    passport: {
+      title: 'O viză pentru fiecare țară',
+      body: 'Încheie o călătorie și țările ei apar ca vize în propriul tău pașaport, cu o ștampilă de intrare la fiecare revenire. Întoarce paginile și retrăiește locurile prin care ai fost.',
+      label: 'Pașaport',
+      entries: 'intrări',
+      stamp: 'Intrare',
+    },
+    widget: {
+      title: 'Călătoria ta, ca o carte de îmbarcare',
+      body: 'Widgetul pentru ecranul principal al iPhone-ului arată călătoria curentă ca o carte de îmbarcare: codurile orașelor, planurile zilei și o cronologie, în modul luminos și întunecat.',
+      from: 'De la',
+      to: 'Spre',
+      day: 'Ziua 2 din 5',
+      plans: ['Muzeul Luvru', 'Prânz în Le Marais', 'Sena la apus'],
+    },
+    weather: {
+      title: 'Vremea dintr-o privire',
+      body: 'Fiecare oraș din călătorie și de pe hartă arată temperatura de acolo chiar acum, de la Open-Meteo.',
+    },
+    reminders: {
+      title: 'Remindere, doar cele utile',
+      body: 'Află când e gata învârtirea zilnică, primește un imbold să-ți planifici următoarea călătorie și, dacă vrei, o alertă când ai ceva de văzut în apropiere. Fiecare are propriul comutator.',
+    },
+  },
+  plans: {
+    eyebrow: 'GoWorth Premium',
+    title: 'Călătorește fără limite.',
+    lead: 'Planul Gratuit include 1 călătorie nouă și 5 locuri noi salvate în fiecare lună. Premium elimină limitele, pe orice dispozitiv conectat la contul tău.',
+    perks: ['Călătorii nelimitate în fiecare lună', 'Locuri salvate nelimitate', 'Pașaportul tău complet cu vize', 'Susții o aplicație de călătorii independentă'],
+    bestValue: 'Cea mai bună ofertă',
+    items: [
+      { id: 'monthly', name: 'Lunar', note: 'Facturat lunar', unit: 'Se reînnoiește lunar' },
+      { id: 'yearly', name: 'Anual', note: 'Facturat o dată pe an', unit: 'Se reînnoiește anual' },
+      { id: 'lifetime', name: 'Pe viață', note: 'Plătești o dată, e al tău pentru totdeauna', unit: 'O singură plată' },
+    ],
+    priceNote: 'Prețurile apar în aplicație, în moneda ta locală, înainte să cumperi.',
+    fine: 'Se cumpără prin App Store sau Google Play. Abonamentele se reînnoiesc automat la același preț până le anulezi din setările magazinului, cu cel puțin 24 de ore înainte de finalul perioadei. Pe viață este o plată unică, fără reînnoire.',
+    rules: 'Citește regulile Premium și ale roții',
+  },
   wheel: {
-    eyebrow: 'Premium, gratuit',
+    eyebrow: 'Sau câștigă-l gratuit',
     title: 'Învârte roata zilnică. Câștigă Premium.',
-    lead: 'GoWorth nu vinde nimic. Premium, cu călătorii și salvări nelimitate, se poate doar câștiga: o învârtire gratuită la fiecare 24 de ore, pentru fiecare cont.',
+    lead: 'Fiecare cont are o învârtire gratuită la fiecare 24 de ore, cu sau fără abonament. Cumpărarea Premium nu schimbă niciodată șansele.',
     labels: { lifetime: 'Pe viață', month: '1 lună', none: 'Mâine' },
     prizes: [
       { name: 'Premium pe 1 lună', odds: '1 la 100', pct: '1%' },
@@ -297,10 +391,10 @@ const ro: Dict = {
     ],
     chance: 'șansă la fiecare învârtire',
     points: [
-      'Fără cumpărături, abonamente sau reînnoiri, deci nimic de anulat',
+      'Roata nu cere niciodată plată',
       'O învârtire la 24 de ore, cronometrată pe serverul nostru, nu pe ceasul telefonului',
       'O lună câștigată cât Premium e activ se adaugă după data de expirare',
-      'Planul Gratuit: 1 călătorie nouă și 5 locuri noi salvate în fiecare lună',
+      'Premium câștigat și cel cumpărat se cumulează: primești varianta care durează mai mult',
     ],
     rules: 'Citește regulile Premium și ale roții',
   },
@@ -310,11 +404,19 @@ const ro: Dict = {
     items: [
       {
         q: 'GoWorth este gratuită?',
-        a: 'Da, complet. Nimic din GoWorth nu costă bani. Planul Gratuit include o călătorie nouă și cinci locuri noi salvate în fiecare lună, iar Premium, cu călătorii și salvări nelimitate, se poate câștiga doar la roata zilnică.',
+        a: 'Da. Aplicația se descarcă și se folosește gratuit. Planul Gratuit include o călătorie nouă și cinci locuri noi salvate în fiecare lună. Premium elimină aceste limite: îl poți cumpăra lunar, anual sau o singură dată pe viață, ori îl poți câștiga la roata zilnică.',
+      },
+      {
+        q: 'Cum cumpăr sau anulez Premium?',
+        a: 'Premium se cumpără din aplicație prin App Store sau Google Play, cu prețul afișat în moneda ta înainte să confirmi. Trebuie să fii conectat, ca Premium să te urmeze pe orice dispozitiv, iar Restaurează cumpărăturile îl aduce înapoi pe un telefon nou. Abonamentele se reînnoiesc automat până le anulezi din setările App Store sau Google Play, cu cel puțin 24 de ore înainte de finalul perioadei; păstrezi Premium până la finalul perioadei plătite. Rambursările sunt gestionate de Apple sau Google.',
       },
       {
         q: 'Cum funcționează roata Premium?',
-        a: 'Fiecare cont conectat are o învârtire gratuită la fiecare 24 de ore. Fiecare învârtire are o șansă de 1 la 100 pentru Premium pe 1 lună și de 1 la 5.000 pentru Premium Pe viață; o lună câștigată cât Premium e activ se adaugă după data de expirare. Nu există cumpărături, abonamente sau reînnoiri automate. Regulile Premium și ale roții sunt în subsolul paginii.',
+        a: 'Fiecare cont conectat are o învârtire gratuită la fiecare 24 de ore, cu sau fără abonament. Fiecare învârtire are o șansă de 1 la 100 pentru Premium pe 1 lună și de 1 la 5.000 pentru Premium Pe viață; o lună câștigată cât Premium e activ se adaugă după data de expirare. Cumpărarea Premium nu schimbă șansele. Regulile Premium și ale roții sunt în subsolul paginii.',
+      },
+      {
+        q: 'Cum primesc vize în pașaport?',
+        a: 'Când o călătorie planificată ajunge la data de final, fiecare țară prin care a trecut se adaugă în pașaport ca viză, iar o revenire adaugă o ștampilă de intrare. Și conturile gratuite strâng vize; Premium deschide pașaportul ca să le vezi.',
       },
       {
         q: 'Am nevoie de cont?',
