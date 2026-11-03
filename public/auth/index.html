@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The address carries a one-time sign-in code: keep it out of search engines and other sites' logs. -->
+    <meta name="robots" content="noindex" />
+    <meta name="referrer" content="no-referrer" />
+    <title>GoWorth</title>
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px;
+        background: #070c16; color: #e8edf5;
+        font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+      main {
+        width: 100%; max-width: 420px; padding: 32px 24px; border-radius: 28px; text-align: center;
+        background: #0e1626; border: 1px solid #253149;
+      }
+      img { width: 72px; height: 72px; border-radius: 18px; }
+      h1 { margin: 20px 0 8px; font-size: 26px; line-height: 1.2; letter-spacing: -0.4px; }
+      p { margin: 0 0 24px; color: #98a2b3; }
+      a.button {
+        display: block; padding: 15px 20px; border-radius: 18px; text-decoration: none; font-weight: 700;
+        background: #2457e6; color: #fff;
+      }
+      a.button:focus-visible { outline: 2px solid #5b86f5; outline-offset: 3px; }
+      [hidden] { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="../brand/app-icon.png" alt="" />
+      <h1 id="title"></h1>
+      <p id="body"></p>
+      <a id="open" class="button" hidden></a>
+    </main>
+    <script>
+      // Supabase confirms the email, then sends the browser here with the link's one-time code (or an error).
+      // This page hands the code to the app, which finishes signing in; the code is useless without the app
+      // that asked for it, so nothing here can sign anyone in on its own.
+      (function () {
+        var query = new URLSearchParams(location.search);
+        var hash = new URLSearchParams(location.hash.replace(/^#/, ''));
+        var flow = query.get('flow') === 'recovery' ? 'recovery' : 'signup';
+        var forwarded = new URLSearchParams();
+        query.forEach(function (value, key) { if (key !== 'flow') forwarded.set(key, value); });
+        hash.forEach(function (value, key) { if (!forwarded.has(key)) forwarded.set(key, value); });
+        var failed = forwarded.has('error') || forwarded.has('error_code');
+        var hasCode = forwarded.has('code');
+        var appUrl = 'goworth://auth' + (forwarded.toString() ? '?' + forwarded.toString() : '');
+        var phone = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var ro = /^ro\b/i.test(navigator.language || '');
+        if (ro) document.documentElement.lang = 'ro';
+
+        var copy = ro ? {
+          open: 'Deschide GoWorth',
+          signup: ['E-mail confirmat', phone ? 'Te trimitem în aplicație, unde ești autentificat automat.' : 'Contul tău e gata. Revino în GoWorth pe telefon ca să continui.'],
+          recovery: ['Alege o parolă nouă', phone ? 'Deschide GoWorth ca să-ți setezi parola nouă.' : 'Deschide acest link pe telefonul de pe care ai cerut resetarea.'],
+          failed: ['Linkul nu mai e valabil', 'A expirat sau a fost deja folosit. Cere unul nou din aplicație.'],
+          plain: ['GoWorth', 'Deschide aplicația GoWorth pe telefon.'],
+        } : {
+          open: 'Open GoWorth',
+          signup: ['Email confirmed', phone ? 'Taking you to the app, where you are signed in automatically.' : 'Your account is ready. Go back to GoWorth on your phone to continue.'],
+          recovery: ['Choose a new password', phone ? 'Open GoWorth to set your new password.' : 'Open this link on the phone where you asked for the reset.'],
+          failed: ['This link no longer works', 'It has expired or was already used. Request a new one in the app.'],
+          plain: ['GoWorth', 'Open the GoWorth app on your phone.'],
+        };
+        var state = failed ? copy.failed : hasCode ? copy[flow] : copy.plain;
+        document.getElementById('title').textContent = state[0];
+        document.getElementById('body').textContent = state[1];
+
+        // The code must not linger in the address bar or the history once it has been read.
+        if (hasCode || failed) history.replaceState(null, '', location.pathname);
+
+        if (phone && (hasCode || failed)) {
+          var button = document.getElementById('open');
+          button.href = appUrl;
+          button.textContent = copy.open;
+          button.hidden = false;
+          // Most browsers open the app straight away; the button covers those that only allow it on a tap.
+          setTimeout(function () { location.href = appUrl; }, 300);
+        }
+      })();
+    </script>
+  </body>
+</html>

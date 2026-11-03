@@ -32,6 +32,10 @@ npm run build
 - All copy lives in [`src/i18n.tsx`](src/i18n.tsx).
 - `src/legal/legal.ts` and `legal-ro.ts` are copied from the app (`goworth/src/data`). Keep them in sync when the app's legal texts change. They open at `#/legal/privacy`, `terms`, `subscriptions` and `credits`.
 
+## Email links
+
+`public/auth/index.html` is the page GoWorth's sign-up and password-reset emails land on, after Supabase has confirmed the address. It opens the app with the link's one-time code (`goworth://auth?code=…`), and on a computer it says to continue on the phone. It is plain HTML outside the React app, so it keeps working whatever happens to the landing page. Its address must stay in the Supabase Auth redirect allow-list and in the app's `EXPO_PUBLIC_AUTH_LINK_URL`.
+
 ## Deploy
 
 Pushes to `main` build and deploy to GitHub Pages through `.github/workflows/deploy.yml`. Enable it once under **Settings → Pages → Source: GitHub Actions**. The build uses a relative base path, so it also works on any static host (Vercel, Netlify, Cloudflare Pages) with `npm run build` and `dist` as the output directory.
