@@ -47,13 +47,14 @@
         var hash = new URLSearchParams(location.hash.replace(/^#/, ''));
         var flow = query.get('flow') === 'recovery' ? 'recovery' : 'signup';
         var forwarded = new URLSearchParams();
-        query.forEach(function (value, key) { if (key !== 'flow') forwarded.set(key, value); });
+        query.forEach(function (value, key) { if (key !== 'flow' && key !== 'lang') forwarded.set(key, value); });
         hash.forEach(function (value, key) { if (!forwarded.has(key)) forwarded.set(key, value); });
         var failed = forwarded.has('error') || forwarded.has('error_code');
         var hasCode = forwarded.has('code');
         var appUrl = 'goworth://auth' + (forwarded.toString() ? '?' + forwarded.toString() : '');
         var phone = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        var ro = /^ro\b/i.test(navigator.language || '');
+        // The app says which language it was in; without that, English.
+        var ro = query.get('lang') === 'ro';
         if (ro) document.documentElement.lang = 'ro';
 
         var copy = ro ? {
