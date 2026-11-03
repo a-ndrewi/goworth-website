@@ -1,4 +1,4 @@
-import { Bell, BookOpen, CloudSun, Plane, Smartphone } from 'lucide-react'
+import { Award, Bell, BookOpen, CloudSun, Plane, RefreshCw, Smartphone, Users, WifiOff } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Reveal, SectionHeading } from '../components/ui'
 import { useI18n } from '../i18n'
@@ -87,6 +87,40 @@ function BoardingPassArt() {
   )
 }
 
+/** A trip's companions as the app's sheet lists them: the organiser first, then who joined or is invited. */
+const party = [
+  { initial: 'A', name: 'Andrei', handle: '@andrei', color: '#5b86f5', role: 'organiser' },
+  { initial: 'M', name: 'Maria', handle: '@maria.travels', color: '#22b98a', role: 'joined' },
+  { initial: 'D', name: 'Dan', handle: '@dan', color: '#f6ae55', role: 'invited' },
+] as const
+
+function CompanionsArt() {
+  const { t } = useI18n()
+  const x = t.extras.companions
+  return (
+    <ul className="mt-6 space-y-2">
+      {party.map((person, n) => (
+        <li key={person.handle} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-full font-display text-sm font-extrabold text-[#0B1430]" style={{ backgroundColor: person.color }}>
+            {person.initial}
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-sm font-semibold text-white">{n === 0 ? `${person.name} · ${x.you}` : person.name}</span>
+            <span className="block truncate text-xs text-muted">{person.handle}</span>
+          </span>
+          <span
+            className={`rounded-full px-2.5 py-1 text-[10px] font-bold tracking-wider uppercase ${
+              person.role === 'invited' ? 'bg-white/[0.07] text-muted' : 'bg-brand/15 text-brand'
+            }`}
+          >
+            {x[person.role]}
+          </span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 const weather = [
   { city: 'Paris', temp: '14°' },
   { city: 'Lisboa', temp: '21°' },
@@ -107,7 +141,17 @@ export function Extras() {
           <Tile icon={<Smartphone className="size-5" />} title={x.widget.title} body={x.widget.body} className="md:col-span-2" delay={0.08}>
             <BoardingPassArt />
           </Tile>
-          <Tile icon={<CloudSun className="size-5" />} title={x.weather.title} body={x.weather.body} className="md:col-span-3" delay={0.04}>
+          <Tile icon={<Users className="size-5" />} title={x.companions.title} body={x.companions.body} className="md:col-span-3" delay={0.04}>
+            <CompanionsArt />
+          </Tile>
+          <Tile icon={<WifiOff className="size-5" />} title={x.offline.title} body={x.offline.body} className="md:col-span-3" delay={0.1}>
+            <div className="mt-6 flex items-center gap-2.5 rounded-2xl bg-[#0B1430] px-4 py-3 text-[13px] font-semibold text-white ring-1 ring-white/10">
+              <Plane className="size-4 shrink-0" />
+              <span className="flex-1">{x.offline.banner}</span>
+              <RefreshCw className="size-4 shrink-0 text-muted" />
+            </div>
+          </Tile>
+          <Tile icon={<CloudSun className="size-5" />} title={x.weather.title} body={x.weather.body} className="md:col-span-2" delay={0.04}>
             <div className="mt-6 flex flex-wrap gap-2">
               {weather.map((w) => (
                 <span key={w.city} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm font-semibold text-ink">
@@ -120,7 +164,8 @@ export function Extras() {
               ))}
             </div>
           </Tile>
-          <Tile icon={<Bell className="size-5" />} title={x.reminders.title} body={x.reminders.body} className="md:col-span-3" delay={0.1} />
+          <Tile icon={<Bell className="size-5" />} title={x.reminders.title} body={x.reminders.body} className="md:col-span-2" delay={0.08} />
+          <Tile icon={<Award className="size-5" />} title={x.stamps.title} body={x.stamps.body} className="md:col-span-2" delay={0.12} />
         </div>
       </div>
     </section>

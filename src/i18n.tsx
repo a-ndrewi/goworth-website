@@ -100,14 +100,14 @@ const en = {
       remaining: 'Remaining',
       perDay: 'Per day left',
     },
-    privacy: { title: 'Private by design', body: 'Your trips, journal and saved places belong to your account and nobody else.' },
+    privacy: { title: 'Private by design', body: 'Your trips, journal and saved places belong to your account. Only the companions you invite see a trip, and only that trip.' },
     language: { title: 'Your language and currency', body: 'English or Română, and the currency you think in.' },
     offline: { title: 'Photos that always load', body: 'Destination photos ship with the app, credited to their Wikimedia Commons authors.' },
   },
   extras: {
     eyebrow: 'New in GoWorth',
     title: 'Your trips, long after you land.',
-    lead: 'A passport that fills with every trip, live weather where you are going, a boarding pass on your home screen and reminders that know when to speak up.',
+    lead: 'Trips you plan together, a passport that fills with every country, live weather where you are going, a boarding pass on your home and Lock Screen, and your trips even without signal.',
     passport: {
       title: 'A visa for every country',
       body: 'Finish a trip and its countries arrive as visas in your own passport, with an entry stamp for every return visit. Turn the pages to relive where you have been.',
@@ -117,7 +117,7 @@ const en = {
     },
     widget: {
       title: 'Your trip as a boarding pass',
-      body: 'The iPhone home screen widget shows the current trip as a boarding pass: city codes, the day’s plans and a timeline, in light and dark.',
+      body: 'The iPhone home screen widget shows the current trip as a boarding pass: city codes, the day’s plans and a timeline, in light and dark. With Premium it comes to the Lock Screen too.',
       from: 'From',
       to: 'To',
       day: 'Day 2 of 5',
@@ -131,12 +131,29 @@ const en = {
       title: 'Reminders, only the useful ones',
       body: 'Know when your daily spin is ready, get a nudge to plan the next trip and, if you opt in, a heads-up when something worth a look is nearby. Each one has its own switch.',
     },
+    companions: {
+      title: 'Plan it together',
+      body: 'Pick a username and invite the people you travel with. Everyone on the trip edits the same itinerary, budget and expenses, and each companion keeps the trip and its visas when it ends. Free trips include one companion; Premium brings the whole group.',
+      you: 'You',
+      organiser: 'Organiser',
+      invited: 'Invited',
+      joined: 'Joined',
+    },
+    offline: {
+      title: 'Your trips, even in airplane mode',
+      body: 'With Premium, your itinerary, budget, saved places, journal and passport stay on the phone and open without a connection. They catch up as soon as you are back online.',
+      banner: 'Offline · your trips as of 3 Nov, 14:20',
+    },
+    stamps: {
+      title: 'Rare stamps for milestones',
+      body: 'Premium passports collect rare stamps along the way, from your first visa to ten flags.',
+    },
   },
   plans: {
     eyebrow: 'GoWorth Premium',
     title: 'Travel without limits.',
-    lead: 'The Free plan covers 1 new trip and 5 new saved places every month. Premium removes the limits, on every device signed in to your account.',
-    perks: ['Unlimited trips every month', 'Unlimited saved places', 'Your full visa passport', 'Help an independent travel app keep growing'],
+    lead: 'The Free plan covers 1 new trip and 5 new saved places every month, with 1 companion on the trips you organise. Premium removes the limits, on every device signed in to your account.',
+    perks: ['Your passport, with a visa for every country you visit', 'Unlimited companions on every trip', 'Unlimited trips and saved places', 'Your trips offline, even in airplane mode', 'Rare stamps for every travel milestone', 'Lock Screen widgets for your current trip'],
     bestValue: 'Best value',
     items: [
       { id: 'monthly', name: 'Monthly', note: 'Billed every month', unit: 'Renews monthly' },
@@ -171,7 +188,7 @@ const en = {
     items: [
       {
         q: 'Is GoWorth free?',
-        a: 'Yes. The app is free to download and use. The Free plan includes one new trip and five new saved places every month. Premium removes these limits: you can buy it monthly, yearly or once for Lifetime, or win it on the daily wheel.',
+        a: 'Yes. The app is free to download and use. The Free plan includes one new trip and five new saved places every month, and one companion on the trips you organise. Premium removes these limits and adds offline trips, rare passport stamps and Lock Screen widgets: you can buy it monthly, yearly or once for Lifetime, or win it on the daily wheel.',
       },
       {
         q: 'How do I buy or cancel Premium?',
@@ -186,8 +203,16 @@ const en = {
         a: 'When a planned trip reaches its end date, every country it passed through is added to your passport as a visa, and a return visit adds an entry stamp. Free accounts collect visas too; Premium opens the passport so you can see them.',
       },
       {
+        q: 'Can I plan a trip with friends?',
+        a: 'Yes. Choose a username, then invite companions from your trip by their username or name. Nobody joins without accepting, and everyone on the trip can edit its dates, cities, itinerary, budget and expenses. Your saved places, journal and other trips stay private. When the trip ends, each companion gets a copy in their journal and the visas for its countries. Free trips include one companion; Premium has no limit.',
+      },
+      {
+        q: 'Does GoWorth work offline?',
+        a: 'With Premium, yes. The app keeps a copy of your trips, budget, saved places, journal and passport on the phone, so they open without signal. Changes need a connection, and the copy refreshes as soon as you are back online.',
+      },
+      {
         q: 'Do I need an account?',
-        a: 'Yes, an email account. Every new account starts empty, and your profile, trips, expenses, saved places and journal stay private to you.',
+        a: 'Yes, an email account. Every new account starts empty, and your profile, trips, expenses, saved places and journal stay private to you. Other travellers can find you only once you choose a username, and they never see your email.',
       },
       {
         q: 'Which devices does it run on?',
@@ -333,14 +358,14 @@ const ro: Dict = {
       remaining: 'Rămas',
       perDay: 'Rămas pe zi',
     },
-    privacy: { title: 'Privat din principiu', body: 'Călătoriile, jurnalul și locurile salvate aparțin contului tău și nimănui altcuiva.' },
+    privacy: { title: 'Privat din principiu', body: 'Călătoriile, jurnalul și locurile salvate aparțin contului tău. Doar însoțitorii pe care îi inviți văd o călătorie, și doar pe aceea.' },
     language: { title: 'Limba și moneda ta', body: 'English sau Română, și moneda în care gândești.' },
     offline: { title: 'Fotografii care se încarcă mereu', body: 'Fotografiile destinațiilor vin cu aplicația, creditate autorilor de pe Wikimedia Commons.' },
   },
   extras: {
     eyebrow: 'Nou în GoWorth',
     title: 'Călătoriile tale, mult după aterizare.',
-    lead: 'Un pașaport care se umple cu fiecare călătorie, vremea de acum la destinație, o carte de îmbarcare pe ecranul principal și remindere care știu când să apară.',
+    lead: 'Călătorii planificate împreună, un pașaport care se umple cu fiecare țară, vremea de acum la destinație, o carte de îmbarcare pe ecranul principal și de blocare, și călătoriile tale chiar și fără semnal.',
     passport: {
       title: 'O viză pentru fiecare țară',
       body: 'Încheie o călătorie și țările ei apar ca vize în propriul tău pașaport, cu o ștampilă de intrare la fiecare revenire. Întoarce paginile și retrăiește locurile prin care ai fost.',
@@ -350,7 +375,7 @@ const ro: Dict = {
     },
     widget: {
       title: 'Călătoria ta, ca o carte de îmbarcare',
-      body: 'Widgetul pentru ecranul principal al iPhone-ului arată călătoria curentă ca o carte de îmbarcare: codurile orașelor, planurile zilei și o cronologie, în modul luminos și întunecat.',
+      body: 'Widgetul pentru ecranul principal al iPhone-ului arată călătoria curentă ca o carte de îmbarcare: codurile orașelor, planurile zilei și o cronologie, în modul luminos și întunecat. Cu Premium apare și pe ecranul de blocare.',
       from: 'De la',
       to: 'Spre',
       day: 'Ziua 2 din 5',
@@ -364,12 +389,29 @@ const ro: Dict = {
       title: 'Remindere, doar cele utile',
       body: 'Află când e gata învârtirea zilnică, primește un imbold să-ți planifici următoarea călătorie și, dacă vrei, o alertă când ai ceva de văzut în apropiere. Fiecare are propriul comutator.',
     },
+    companions: {
+      title: 'Planificați împreună',
+      body: 'Alege-ți un nume de utilizator și invită oamenii cu care călătorești. Toți cei din călătorie editează același itinerariu, buget și aceleași cheltuieli, iar fiecare însoțitor păstrează călătoria și vizele ei la final. Călătoriile gratuite includ un însoțitor; cu Premium vine tot grupul.',
+      you: 'Tu',
+      organiser: 'Organizator',
+      invited: 'Invitat',
+      joined: 'Acceptat',
+    },
+    offline: {
+      title: 'Călătoriile tale, chiar și în modul avion',
+      body: 'Cu Premium, itinerariul, bugetul, locurile salvate, jurnalul și pașaportul rămân pe telefon și se deschid fără conexiune. Se actualizează imediat ce revii online.',
+      banner: 'Offline · călătoriile tale la 3 nov., 14:20',
+    },
+    stamps: {
+      title: 'Ștampile rare pentru repere',
+      body: 'Pașapoartele Premium adună ștampile rare pe drum, de la prima viză la zece steaguri.',
+    },
   },
   plans: {
     eyebrow: 'GoWorth Premium',
     title: 'Călătorește fără limite.',
-    lead: 'Planul Gratuit include 1 călătorie nouă și 5 locuri noi salvate în fiecare lună. Premium elimină limitele, pe orice dispozitiv conectat la contul tău.',
-    perks: ['Călătorii nelimitate în fiecare lună', 'Locuri salvate nelimitate', 'Pașaportul tău complet cu vize', 'Susții o aplicație de călătorii independentă'],
+    lead: 'Planul Gratuit include 1 călătorie nouă și 5 locuri noi salvate în fiecare lună, plus 1 însoțitor în călătoriile pe care le organizezi. Premium elimină limitele, pe orice dispozitiv conectat la contul tău.',
+    perks: ['Pașaportul tău, cu o viză pentru fiecare țară vizitată', 'Însoțitori nelimitați în fiecare călătorie', 'Călătorii și locuri salvate nelimitate', 'Călătoriile tale offline, chiar și în modul avion', 'Ștampile rare pentru fiecare reper din călătorii', 'Widgeturi pe ecranul de blocare pentru călătoria curentă'],
     bestValue: 'Cea mai bună ofertă',
     items: [
       { id: 'monthly', name: 'Lunar', note: 'Facturat lunar', unit: 'Se reînnoiește lunar' },
@@ -404,7 +446,7 @@ const ro: Dict = {
     items: [
       {
         q: 'GoWorth este gratuită?',
-        a: 'Da. Aplicația se descarcă și se folosește gratuit. Planul Gratuit include o călătorie nouă și cinci locuri noi salvate în fiecare lună. Premium elimină aceste limite: îl poți cumpăra lunar, anual sau o singură dată pe viață, ori îl poți câștiga la roata zilnică.',
+        a: 'Da. Aplicația se descarcă și se folosește gratuit. Planul Gratuit include o călătorie nouă și cinci locuri noi salvate în fiecare lună, plus un însoțitor în călătoriile pe care le organizezi. Premium elimină aceste limite și adaugă călătorii offline, ștampile rare în pașaport și widgeturi pe ecranul de blocare: îl poți cumpăra lunar, anual sau o singură dată pe viață, ori îl poți câștiga la roata zilnică.',
       },
       {
         q: 'Cum cumpăr sau anulez Premium?',
@@ -419,8 +461,16 @@ const ro: Dict = {
         a: 'Când o călătorie planificată ajunge la data de final, fiecare țară prin care a trecut se adaugă în pașaport ca viză, iar o revenire adaugă o ștampilă de intrare. Și conturile gratuite strâng vize; Premium deschide pașaportul ca să le vezi.',
       },
       {
+        q: 'Pot planifica o călătorie cu prietenii?',
+        a: 'Da. Alege-ți un nume de utilizator, apoi invită însoțitori din călătorie după numele lor de utilizator sau de profil. Nimeni nu intră fără să accepte, iar toți cei din călătorie îi pot edita datele, orașele, itinerariul, bugetul și cheltuielile. Locurile salvate, jurnalul și celelalte călătorii rămân private. La final, fiecare însoțitor primește o copie în jurnal și vizele pentru țările ei. Călătoriile gratuite includ un însoțitor; cu Premium nu există limită.',
+      },
+      {
+        q: 'GoWorth funcționează offline?',
+        a: 'Cu Premium, da. Aplicația păstrează pe telefon o copie a călătoriilor, bugetului, locurilor salvate, jurnalului și pașaportului, ca să se deschidă fără semnal. Modificările au nevoie de conexiune, iar copia se actualizează imediat ce revii online.',
+      },
+      {
         q: 'Am nevoie de cont?',
-        a: 'Da, un cont cu email. Fiecare cont nou pornește gol, iar profilul, călătoriile, cheltuielile, locurile salvate și jurnalul rămân private.',
+        a: 'Da, un cont cu email. Fiecare cont nou pornește gol, iar profilul, călătoriile, cheltuielile, locurile salvate și jurnalul rămân private. Ceilalți călători te pot găsi doar după ce îți alegi un nume de utilizator și nu îți văd niciodată adresa de email.',
       },
       {
         q: 'Pe ce dispozitive funcționează?',
