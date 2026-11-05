@@ -1,4 +1,4 @@
-import { Award, Bell, BookOpen, CloudSun, Plane, RefreshCw, Smartphone, Users, WifiOff } from 'lucide-react'
+import { Award, Bell, BookOpen, CalendarDays, CloudSun, Crown, Layers, Plane, RefreshCw, Share2, Smartphone, Users, WifiOff } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Reveal, SectionHeading } from '../components/ui'
 import { useI18n } from '../i18n'
@@ -121,6 +121,70 @@ function CompanionsArt() {
   )
 }
 
+/** The share sheet's style picker and a story card, as the app shows them; Route and Passport carry the Premium crown. */
+function ShareArt() {
+  const { t } = useI18n()
+  const x = t.extras.share
+  return (
+    <div className="mt-6 flex items-center gap-4">
+      <div className="relative aspect-[9/16] w-24 shrink-0 overflow-hidden rounded-2xl ring-1 ring-white/15 sm:w-28">
+        <div className="absolute inset-0 flex">
+          <span className="flex-1 bg-[#0055A4]" />
+          <span className="flex-1 bg-[#F4F6FA]" />
+          <span className="flex-1 bg-[#EF4135]" />
+        </div>
+        <div className="absolute inset-x-2 bottom-2 rounded-xl bg-[#0B1430]/85 p-2 text-white backdrop-blur">
+          <p className="font-display text-sm leading-tight font-extrabold">France</p>
+          <p className="text-[9px] font-semibold text-white/70">Paris · Lyon</p>
+          <p className="mt-1 text-[9px] font-bold tracking-wider text-[#F5C451] uppercase">6 days · 14 places</p>
+        </div>
+      </div>
+      <div className="min-w-0 flex-1 space-y-2">
+        {x.styles.map((style, n) => (
+          <span
+            key={style}
+            className={`flex items-center justify-between gap-2 rounded-full px-3.5 py-1.5 text-[13px] font-bold ${
+              n === 0 ? 'bg-white text-[#0B1430]' : 'border border-white/15 bg-white/[0.04] text-white'
+            }`}
+          >
+            {style}
+            {n > 0 && <Crown className="size-3.5 shrink-0 text-[#F5C451]" />}
+          </span>
+        ))}
+        <span className="flex items-center gap-2 px-1 text-xs font-semibold text-muted">
+          <span className="relative h-4 w-7 shrink-0 rounded-full bg-white/15">
+            <span className="absolute top-0.5 left-0.5 size-3 rounded-full bg-white/70" />
+          </span>
+          {x.spending}
+        </span>
+      </div>
+    </div>
+  )
+}
+
+const tripColors = ['#5b86f5', '#22b98a', '#f07088']
+
+function TripsArt() {
+  const { t } = useI18n()
+  const x = t.extras.trips
+  return (
+    <ul className="mt-6 space-y-2">
+      {x.list.map((trip, n) => (
+        <li key={trip.name} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-xl text-[#0B1430]" style={{ backgroundColor: tripColors[n] }}>
+            <CalendarDays className="size-4" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-sm font-semibold text-white">{trip.name}</span>
+            <span className="block truncate text-xs text-muted">{trip.dates}</span>
+          </span>
+          <span className="rounded-full bg-brand/15 px-2.5 py-1 text-[10px] font-bold tracking-wider text-brand uppercase">{trip.tag}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 const weather = [
   { city: 'Paris', temp: '14°' },
   { city: 'Lisboa', temp: '21°' },
@@ -150,6 +214,12 @@ export function Extras() {
               <span className="flex-1">{x.offline.banner}</span>
               <RefreshCw className="size-4 shrink-0 text-muted" />
             </div>
+          </Tile>
+          <Tile icon={<Share2 className="size-5" />} title={x.share.title} body={x.share.body} className="md:col-span-3" delay={0.04}>
+            <ShareArt />
+          </Tile>
+          <Tile icon={<Layers className="size-5" />} title={x.trips.title} body={x.trips.body} className="md:col-span-3" delay={0.1}>
+            <TripsArt />
           </Tile>
           <Tile icon={<CloudSun className="size-5" />} title={x.weather.title} body={x.weather.body} className="md:col-span-2" delay={0.04}>
             <div className="mt-6 flex flex-wrap gap-2">

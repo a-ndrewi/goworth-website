@@ -36,13 +36,13 @@ const en = {
         tab: 'Explore',
         title: 'The whole world on one map',
         body: 'Spin the globe, jump to a region or search any country, city or place. Selecting one loads what is worth seeing nearby.',
-        points: ['Worldwide, Europe, Asia and US state views', 'Search powered by OpenStreetMap', 'Nearby attractions load on demand'],
+        points: ['Worldwide, Europe, Asia and US state views', 'Search powered by OpenStreetMap', 'Many more attractions in every city, each with its own photo'],
       },
       {
         tab: 'Plan',
         title: 'A multi-city trip in three steps',
         body: 'Pick your cities and how many days in each, set your dates and choose a travel style. GoWorth lays it all out for you.',
-        points: ['Several cities in one route', 'Up to 14 days, organised day by day', 'Solo, couple, friends or family'],
+        points: ['Several cities in one route', 'Up to 14 days, organised day by day', 'Solo, as a duo or with a group'],
       },
       {
         tab: 'Itinerary',
@@ -70,12 +70,12 @@ const en = {
     items: [
       { title: 'Where are you going?', body: 'Add one city or several for a route, and set the days in each.' },
       { title: 'When?', body: 'Pick your dates. Up to 14 days, organised day by day.' },
-      { title: 'Your style', body: 'Solo, couple, friends or family, plus a budget for suggestions.' },
+      { title: 'Your style', body: 'Solo, as a duo or with a group, plus a budget for suggestions.' },
     ],
     days: 'days',
     depart: 'Departure',
     ret: 'Return',
-    styles: ['Solo', 'Couple', 'Friends', 'Family'],
+    styles: ['Solo', 'Duo', 'Group'],
     perPerson: 'per person',
   },
   watch: {
@@ -107,7 +107,7 @@ const en = {
   extras: {
     eyebrow: 'New in GoWorth',
     title: 'Your trips, long after you land.',
-    lead: 'Trips you plan together, a passport that fills with every country, live weather where you are going, a boarding pass on your home and Lock Screen, and your trips even without signal.',
+    lead: 'Trips you plan together and side by side, a passport that fills with every country, story cards to share where you have been, live weather where you are going, a boarding pass on your home and Lock Screen, and your trips even without signal.',
     passport: {
       title: 'A visa for every country',
       body: 'Finish a trip and its countries arrive as visas in your own passport, with an entry stamp for every return visit. Turn the pages to relive where you have been.',
@@ -148,12 +148,27 @@ const en = {
       title: 'Rare stamps for milestones',
       body: 'Premium passports collect rare stamps along the way, from your first visa to ten flags.',
     },
+    share: {
+      title: 'Share it as a story',
+      body: 'Turn a trip into a 9:16 card for Instagram, TikTok or Messages: a postcard coloured after the country, your route on the map, or a visa page. Spending stays hidden unless you show it, and your whole passport can go out as one card. The Postcard style is free; Route and Passport come with Premium.',
+      styles: ['Postcard', 'Route', 'Passport'],
+      spending: 'Show spending',
+    },
+    trips: {
+      title: 'Several trips, side by side',
+      body: 'Plan the summer road trip and the autumn city break at the same time. With Premium every trip keeps its own itinerary, budget, companions and notes; the Free plan keeps one active trip at a time.',
+      list: [
+        { name: 'Paris · Lyon', dates: '12 – 18 Mar', tag: 'Duo' },
+        { name: 'Lisboa', dates: '3 – 7 Jun', tag: 'Group' },
+        { name: 'Kyoto · Tokyo', dates: '14 – 26 Oct', tag: 'Solo' },
+      ],
+    },
   },
   plans: {
     eyebrow: 'GoWorth Premium',
     title: 'Travel without limits.',
-    lead: 'The Free plan covers 1 new trip and 5 new saved places every month, with 1 companion on the trips you organise. Premium removes the limits, on every device signed in to your account.',
-    perks: ['Your passport, with a visa for every country you visit', 'Unlimited companions on every trip', 'Unlimited trips and saved places', 'Your trips offline, even in airplane mode', 'Rare stamps for every travel milestone', 'Lock Screen widgets for your current trip'],
+    lead: 'The Free plan covers one active trip, 1 new trip and 5 new saved places every month, with 1 companion on the trips you organise. Premium removes the limits, on every device signed in to your account.',
+    perks: ['Your passport, with a visa for every country you visit', 'Unlimited companions on every trip', 'Several trips side by side, no monthly limit', 'Unlimited saved places', 'Your trips offline, even in airplane mode', 'Rare stamps for every travel milestone', 'Route and passport story cards to share', 'Lock Screen widget for your current trip on iPhone'],
     bestValue: 'Best value',
     items: [
       { id: 'monthly', name: 'Monthly', note: 'Billed every month', unit: 'Renews monthly' },
@@ -188,7 +203,7 @@ const en = {
     items: [
       {
         q: 'Is GoWorth free?',
-        a: 'Yes. The app is free to download and use. The Free plan includes one new trip and five new saved places every month, and one companion on the trips you organise. Premium removes these limits and adds offline trips, rare passport stamps and Lock Screen widgets: you can buy it monthly, yearly or once for Lifetime, or win it on the daily wheel.',
+        a: 'Yes. The app is free to download and use. The Free plan includes one active trip, one new trip and five new saved places every month, one companion on the trips you organise and the Postcard story card. Premium removes these limits and adds several trips side by side, offline trips, the passport with rare stamps, Route and Passport story cards and the Lock Screen widget: you can buy it monthly, yearly or once for Lifetime, or win it on the daily wheel.',
       },
       {
         q: 'How do I buy or cancel Premium?',
@@ -207,6 +222,14 @@ const en = {
         a: 'Yes. Choose a username, then invite companions from your trip by their username or name. Nobody joins without accepting, and everyone on the trip can edit its dates, cities, itinerary, budget and expenses. Your saved places, journal and other trips stay private. When the trip ends, each companion gets a copy in their journal and the visas for its countries. Free trips include one companion; Premium has no limit.',
       },
       {
+        q: 'Can I share my trip?',
+        a: 'Yes. From a trip or your journal, tap Share and pick a style: Postcard, Route or Passport. The card is made on your phone and goes straight to the share sheet, ready for Instagram, TikTok, Messages or Photos; on Android, take a screenshot of the card. Spending appears only if you turn it on. Postcard is free; Route, Passport and sharing your whole passport come with Premium.',
+      },
+      {
+        q: 'What do “Places near you” notifications do?',
+        a: 'Nothing until you turn them on in Profile > Notifications and allow location Always. Then, when you arrive somewhere about 2 km from where you were, GoWorth may suggest one attraction nearby. Your position is used only to look up places on the phone; it is not stored in your account and no location history is kept. Turn the switch off at any time.',
+      },
+      {
         q: 'Does GoWorth work offline?',
         a: 'With Premium, yes. The app keeps a copy of your trips, budget, saved places, journal and passport on the phone, so they open without signal. Changes need a connection, and the copy refreshes as soon as you are back online.',
       },
@@ -220,7 +243,7 @@ const en = {
       },
       {
         q: 'Where does the place information come from?',
-        a: 'A curated catalogue of 64 destinations and 384 named places, plus live map search from OpenStreetMap and photos from Wikimedia Commons with their source and licence. Always confirm current opening hours and prices with the venue.',
+        a: 'A curated catalogue of 64 destinations and 384 named places, plus attractions and venues from OpenStreetMap, places from Wikipedia and Wikidata, and photos of each place from Wikimedia Commons with their source and licence. Always confirm current opening hours and prices with the venue.',
       },
       {
         q: 'Can I plan a trip with several cities?',
@@ -294,13 +317,13 @@ const ro: Dict = {
         tab: 'Explorează',
         title: 'Toată lumea pe o singură hartă',
         body: 'Rotește globul, sari la o regiune sau caută orice țară, oraș sau loc. Când alegi unul, apar lucrurile care merită văzute în jur.',
-        points: ['Vederi Mondial, Europa, Asia și state SUA', 'Căutare cu OpenStreetMap', 'Atracțiile din apropiere se încarcă la cerere'],
+        points: ['Vederi Mondial, Europa, Asia și state SUA', 'Căutare cu OpenStreetMap', 'Mult mai multe atracții în fiecare oraș, fiecare cu fotografia ei'],
       },
       {
         tab: 'Planifică',
         title: 'O călătorie în mai multe orașe, în trei pași',
         body: 'Alege orașele și câte zile stai în fiecare, setează datele și stilul de călătorie. GoWorth le așază pe toate pentru tine.',
-        points: ['Mai multe orașe pe un singur traseu', 'Până la 14 zile, organizate zi cu zi', 'Singur, în cuplu, cu prietenii sau cu familia'],
+        points: ['Mai multe orașe pe un singur traseu', 'Până la 14 zile, organizate zi cu zi', 'Solo, în doi sau în grup'],
       },
       {
         tab: 'Itinerariu',
@@ -328,12 +351,12 @@ const ro: Dict = {
     items: [
       { title: 'Unde mergi?', body: 'Adaugă un oraș sau mai multe pentru un traseu și setează zilele în fiecare.' },
       { title: 'Când?', body: 'Alege datele. Până la 14 zile, organizate zi cu zi.' },
-      { title: 'Stilul tău', body: 'Singur, în cuplu, cu prietenii sau cu familia, plus un buget pentru sugestii.' },
+      { title: 'Stilul tău', body: 'Solo, în doi sau în grup, plus un buget pentru sugestii.' },
     ],
     days: 'zile',
     depart: 'Plecare',
     ret: 'Întoarcere',
-    styles: ['Singur', 'Cuplu', 'Prieteni', 'Familie'],
+    styles: ['Solo', 'Duo', 'Grup'],
     perPerson: 'de persoană',
   },
   watch: {
@@ -365,7 +388,7 @@ const ro: Dict = {
   extras: {
     eyebrow: 'Nou în GoWorth',
     title: 'Călătoriile tale, mult după aterizare.',
-    lead: 'Călătorii planificate împreună, un pașaport care se umple cu fiecare țară, vremea de acum la destinație, o carte de îmbarcare pe ecranul principal și de blocare, și călătoriile tale chiar și fără semnal.',
+    lead: 'Călătorii planificate împreună și în paralel, un pașaport care se umple cu fiecare țară, carduri de distribuit cu locurile prin care ai fost, vremea de acum la destinație, o carte de îmbarcare pe ecranul principal și de blocare, și călătoriile tale chiar și fără semnal.',
     passport: {
       title: 'O viză pentru fiecare țară',
       body: 'Încheie o călătorie și țările ei apar ca vize în propriul tău pașaport, cu o ștampilă de intrare la fiecare revenire. Întoarce paginile și retrăiește locurile prin care ai fost.',
@@ -406,12 +429,27 @@ const ro: Dict = {
       title: 'Ștampile rare pentru repere',
       body: 'Pașapoartele Premium adună ștampile rare pe drum, de la prima viză la zece steaguri.',
     },
+    share: {
+      title: 'Distribuie-o ca story',
+      body: 'Transformă o călătorie într-un card 9:16 pentru Instagram, TikTok sau Mesaje: o carte poștală în culorile țării, traseul tău pe hartă sau o pagină de viză. Cheltuielile rămân ascunse dacă nu le arăți, iar tot pașaportul poate pleca într-un singur card. Stilul Carte poștală este gratuit; Traseu și Pașaport vin cu Premium.',
+      styles: ['Carte poștală', 'Traseu', 'Pașaport'],
+      spending: 'Arată cheltuielile',
+    },
+    trips: {
+      title: 'Mai multe călătorii, în paralel',
+      body: 'Planifică vacanța de vară și city break-ul de toamnă în același timp. Cu Premium, fiecare călătorie are propriul itinerariu, buget, însoțitori și notițe; planul Gratuit păstrează o singură călătorie activă.',
+      list: [
+        { name: 'Paris · Lyon', dates: '12 – 18 mar.', tag: 'Duo' },
+        { name: 'Lisabona', dates: '3 – 7 iun.', tag: 'Grup' },
+        { name: 'Kyoto · Tokyo', dates: '14 – 26 oct.', tag: 'Solo' },
+      ],
+    },
   },
   plans: {
     eyebrow: 'GoWorth Premium',
     title: 'Călătorește fără limite.',
-    lead: 'Planul Gratuit include 1 călătorie nouă și 5 locuri noi salvate în fiecare lună, plus 1 însoțitor în călătoriile pe care le organizezi. Premium elimină limitele, pe orice dispozitiv conectat la contul tău.',
-    perks: ['Pașaportul tău, cu o viză pentru fiecare țară vizitată', 'Însoțitori nelimitați în fiecare călătorie', 'Călătorii și locuri salvate nelimitate', 'Călătoriile tale offline, chiar și în modul avion', 'Ștampile rare pentru fiecare reper din călătorii', 'Widgeturi pe ecranul de blocare pentru călătoria curentă'],
+    lead: 'Planul Gratuit include o călătorie activă, 1 călătorie nouă și 5 locuri noi salvate în fiecare lună, plus 1 însoțitor în călătoriile pe care le organizezi. Premium elimină limitele, pe orice dispozitiv conectat la contul tău.',
+    perks: ['Pașaportul tău, cu o viză pentru fiecare țară vizitată', 'Însoțitori nelimitați în fiecare călătorie', 'Mai multe călătorii în paralel, fără limită lunară', 'Locuri salvate nelimitate', 'Călătoriile tale offline, chiar și în modul avion', 'Ștampile rare pentru fiecare reper din călătorii', 'Carduri cu traseul și pașaportul, de distribuit', 'Widgetul călătoriei curente pe ecranul de blocare al iPhone-ului'],
     bestValue: 'Cea mai bună ofertă',
     items: [
       { id: 'monthly', name: 'Lunar', note: 'Facturat lunar', unit: 'Se reînnoiește lunar' },
@@ -446,7 +484,7 @@ const ro: Dict = {
     items: [
       {
         q: 'GoWorth este gratuită?',
-        a: 'Da. Aplicația se descarcă și se folosește gratuit. Planul Gratuit include o călătorie nouă și cinci locuri noi salvate în fiecare lună, plus un însoțitor în călătoriile pe care le organizezi. Premium elimină aceste limite și adaugă călătorii offline, ștampile rare în pașaport și widgeturi pe ecranul de blocare: îl poți cumpăra lunar, anual sau o singură dată pe viață, ori îl poți câștiga la roata zilnică.',
+        a: 'Da. Aplicația se descarcă și se folosește gratuit. Planul Gratuit include o călătorie activă, o călătorie nouă și cinci locuri noi salvate în fiecare lună, un însoțitor în călătoriile pe care le organizezi și cardul Carte poștală. Premium elimină aceste limite și adaugă mai multe călătorii în paralel, călătorii offline, pașaportul cu ștampile rare, cardurile Traseu și Pașaport și widgetul de pe ecranul de blocare: îl poți cumpăra lunar, anual sau o singură dată pe viață, ori îl poți câștiga la roata zilnică.',
       },
       {
         q: 'Cum cumpăr sau anulez Premium?',
@@ -465,6 +503,14 @@ const ro: Dict = {
         a: 'Da. Alege-ți un nume de utilizator, apoi invită însoțitori din călătorie după numele lor de utilizator sau de profil. Nimeni nu intră fără să accepte, iar toți cei din călătorie îi pot edita datele, orașele, itinerariul, bugetul și cheltuielile. Locurile salvate, jurnalul și celelalte călătorii rămân private. La final, fiecare însoțitor primește o copie în jurnal și vizele pentru țările ei. Călătoriile gratuite includ un însoțitor; cu Premium nu există limită.',
       },
       {
+        q: 'Îmi pot distribui călătoria?',
+        a: 'Da. Dintr-o călătorie sau din jurnal, atinge Distribuie și alege un stil: Carte poștală, Traseu sau Pașaport. Cardul este creat pe telefon și ajunge direct în meniul de distribuire, gata pentru Instagram, TikTok, Mesaje sau Poze; pe Android, fă o captură de ecran a cardului. Cheltuielile apar doar dacă le activezi. Carte poștală este gratuit; Traseu, Pașaport și distribuirea întregului pașaport vin cu Premium.',
+      },
+      {
+        q: 'Ce fac notificările „Locuri în apropiere”?',
+        a: 'Nimic, până le activezi din Profil > Notificări și permiți locația Întotdeauna. Apoi, când ajungi la aproximativ 2 km de locul în care erai, GoWorth îți poate sugera o atracție din apropiere. Poziția este folosită doar pentru a căuta locuri de pe telefon; nu se salvează în cont și nu se păstrează un istoric al locațiilor. Poți opri comutatorul oricând.',
+      },
+      {
         q: 'GoWorth funcționează offline?',
         a: 'Cu Premium, da. Aplicația păstrează pe telefon o copie a călătoriilor, bugetului, locurilor salvate, jurnalului și pașaportului, ca să se deschidă fără semnal. Modificările au nevoie de conexiune, iar copia se actualizează imediat ce revii online.',
       },
@@ -478,7 +524,7 @@ const ro: Dict = {
       },
       {
         q: 'De unde vin informațiile despre locuri?',
-        a: 'Dintr-un catalog de 64 de destinații și 384 de locuri, plus căutare live pe hartă prin OpenStreetMap și fotografii de pe Wikimedia Commons, cu sursa și licența lor. Verifică mereu programul și prețurile actuale cu locația.',
+        a: 'Dintr-un catalog de 64 de destinații și 384 de locuri, plus atracții și localuri din OpenStreetMap, locuri din Wikipedia și Wikidata și fotografii ale fiecărui loc de pe Wikimedia Commons, cu sursa și licența lor. Verifică mereu programul și prețurile actuale cu locația.',
       },
       {
         q: 'Pot planifica o călătorie în mai multe orașe?',

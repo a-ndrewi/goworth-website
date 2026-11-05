@@ -1,4 +1,4 @@
-import { Baby, Calendar, Heart, Minus, Plus, User, Users } from 'lucide-react'
+import { Calendar, Minus, Plus, User, Users, UsersRound } from 'lucide-react'
 import { Reveal, SectionHeading } from '../components/ui'
 import { useI18n } from '../i18n'
 
@@ -24,7 +24,7 @@ export function Steps() {
     ['Lyon', 2],
     ['Marseille', 2],
   ] as const
-  const styleIcons = [User, Heart, Users, Baby]
+  const styleIcons = [User, Users, UsersRound]
 
   return (
     <section id="how" className="relative py-24 sm:py-32">
@@ -82,7 +82,7 @@ export function Steps() {
             </div>
           </Card>
           <Card n={3} title={s3.title} body={s3.body} delay={0.2}>
-            <div className="grid grid-cols-4 gap-1.5">
+            <div className="grid grid-cols-3 gap-1.5">
               {t.steps.styles.map((s, n) => {
                 const Icon = styleIcons[n]
                 return (
