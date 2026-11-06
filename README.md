@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/brand/app-icon.png" width="88" alt="GoWorth icon" />
+  <img src="public/brand/app-icon.png" width="120" alt="GoWorth logo" />
 </p>
 
 <h1 align="center">GoWorth website</h1>
