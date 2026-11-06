@@ -1,4 +1,4 @@
-import { Award, Bell, BookOpen, CalendarDays, CloudSun, Crown, Layers, Plane, RefreshCw, Share2, Smartphone, Users, WifiOff } from 'lucide-react'
+import { ArrowRight, Award, Bell, BookOpen, CalendarDays, Check, CloudSun, Coffee, Crown, Gift, Layers, Martini, Music, Plane, RefreshCw, Share2, Smartphone, Sun, Users, Utensils, WalletCards, WifiOff } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Reveal, SectionHeading } from '../components/ui'
 import { useI18n } from '../i18n'
@@ -185,6 +185,103 @@ function TripsArt() {
   )
 }
 
+/** Settle up as the app shows it: your balance, then the fewest payments that square the group. */
+function SplitArt() {
+  const { t } = useI18n()
+  const x = t.extras.split
+  return (
+    <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+      <div className="flex items-baseline justify-between gap-3">
+        <p className="text-[10px] font-bold tracking-widest text-muted uppercase">{x.balance}</p>
+        <p className="font-display text-2xl font-extrabold text-green tabular-nums">€86</p>
+      </div>
+      <ul className="mt-3 space-y-2">
+        {[
+          { from: 'Maria', to: 'Andrei', amount: '€54', color: '#22b98a' },
+          { from: 'Dan', to: 'Andrei', amount: '€32', color: '#f6ae55' },
+        ].map((row, n) => (
+          <li key={row.from} className="flex items-center gap-2.5 rounded-xl bg-[#0B1430] px-3 py-2 ring-1 ring-white/10">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-full font-display text-xs font-extrabold text-[#0B1430]" style={{ backgroundColor: row.color }}>
+              {row.from[0]}
+            </span>
+            <span className="flex min-w-0 flex-1 items-center gap-1.5 truncate text-[13px] font-semibold text-white">
+              {row.from}
+              <ArrowRight className="size-3.5 shrink-0 text-muted" />
+              {row.to}
+            </span>
+            <span className="text-[13px] font-bold text-white tabular-nums">{row.amount}</span>
+            {n === 0 ? (
+              <span className="inline-flex items-center gap-1 rounded-full bg-green/15 px-2 py-0.5 text-[10px] font-bold tracking-wider text-green uppercase">
+                <Check className="size-3" />
+              </span>
+            ) : (
+              <span className="rounded-full bg-white px-2.5 py-1 text-[10px] font-bold text-[#0B1430]">{x.paid}</span>
+            )}
+          </li>
+        ))}
+      </ul>
+      <p className="mt-3 text-xs font-semibold text-muted">{x.square}</p>
+    </div>
+  )
+}
+
+/** The invite pass from the app: a perforated ticket with the code on its stub. */
+function InviteArt() {
+  const { t } = useI18n()
+  const x = t.extras.invite
+  return (
+    <div className="mt-6 overflow-hidden rounded-2xl border border-[#F5C451]/25 bg-gradient-to-br from-[#13224A] to-[#0B1430]">
+      <div className="px-4 pt-4 pb-3">
+        <p className="text-[10px] font-bold tracking-widest text-[#F5C451] uppercase">{x.label}</p>
+        <p className="mt-1 font-display text-3xl font-extrabold tracking-[0.3em] text-white tabular-nums">K7Q4MZ</p>
+      </div>
+      <div className="relative border-t-2 border-dashed border-white/15">
+        <span className="absolute -top-2.5 -left-2.5 size-5 rounded-full bg-[#0e1626]" />
+        <span className="absolute -top-2.5 -right-2.5 size-5 rounded-full bg-[#0e1626]" />
+      </div>
+      <div className="flex items-center gap-3 px-4 py-3">
+        <span className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-3 py-2 text-[13px] font-bold text-[#0B1430]">
+          <Share2 className="size-4" />
+          {x.share}
+        </span>
+        <span className="text-right text-[11px] leading-tight font-semibold text-muted">
+          <span className="block font-display text-base font-extrabold text-white">3</span>
+          {x.friends}
+        </span>
+        <span className="text-right text-[11px] leading-tight font-semibold text-muted">
+          <span className="block font-display text-base font-extrabold text-[#F5C451]">3</span>
+          {x.months}
+        </span>
+      </div>
+    </div>
+  )
+}
+
+const venueIcons = [Utensils, Martini, Coffee, Music, Sun]
+
+function VenuesArt() {
+  const { t } = useI18n()
+  const x = t.extras.venues
+  return (
+    <div className="mt-6 flex flex-wrap gap-2">
+      {x.chips.map((chip, n) => {
+        const Icon = venueIcons[n]
+        return (
+          <span
+            key={chip}
+            className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-bold ${
+              n === 0 ? 'bg-brand text-white' : 'border border-white/15 bg-white/[0.04] text-white'
+            }`}
+          >
+            <Icon className="size-3.5" />
+            {chip}
+          </span>
+        )
+      })}
+    </div>
+  )
+}
+
 const weather = [
   { city: 'Paris', temp: '14°' },
   { city: 'Lisboa', temp: '21°' },
@@ -221,7 +318,16 @@ export function Extras() {
           <Tile icon={<Layers className="size-5" />} title={x.trips.title} body={x.trips.body} className="md:col-span-3" delay={0.1}>
             <TripsArt />
           </Tile>
-          <Tile icon={<CloudSun className="size-5" />} title={x.weather.title} body={x.weather.body} className="md:col-span-2" delay={0.04}>
+          <Tile icon={<WalletCards className="size-5" />} title={x.split.title} body={x.split.body} className="md:col-span-3" delay={0.04}>
+            <SplitArt />
+          </Tile>
+          <Tile icon={<Gift className="size-5" />} title={x.invite.title} body={x.invite.body} className="md:col-span-3" delay={0.1}>
+            <InviteArt />
+          </Tile>
+          <Tile icon={<Utensils className="size-5" />} title={x.venues.title} body={x.venues.body} className="md:col-span-4" delay={0.04}>
+            <VenuesArt />
+          </Tile>
+          <Tile icon={<CloudSun className="size-5" />} title={x.weather.title} body={x.weather.body} className="md:col-span-2" delay={0.08}>
             <div className="mt-6 flex flex-wrap gap-2">
               {weather.map((w) => (
                 <span key={w.city} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm font-semibold text-ink">
@@ -234,8 +340,8 @@ export function Extras() {
               ))}
             </div>
           </Tile>
-          <Tile icon={<Bell className="size-5" />} title={x.reminders.title} body={x.reminders.body} className="md:col-span-2" delay={0.08} />
-          <Tile icon={<Award className="size-5" />} title={x.stamps.title} body={x.stamps.body} className="md:col-span-2" delay={0.12} />
+          <Tile icon={<Bell className="size-5" />} title={x.reminders.title} body={x.reminders.body} className="md:col-span-3" delay={0.04} />
+          <Tile icon={<Award className="size-5" />} title={x.stamps.title} body={x.stamps.body} className="md:col-span-3" delay={0.1} />
         </div>
       </div>
     </section>

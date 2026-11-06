@@ -36,7 +36,7 @@ const en = {
         tab: 'Explore',
         title: 'The whole world on one map',
         body: 'Spin the globe, jump to a region or search any country, city or place. Selecting one loads what is worth seeing nearby.',
-        points: ['Worldwide, Europe, Asia and US state views', 'Search powered by OpenStreetMap', 'Many more attractions in every city, each with its own photo'],
+        points: ['Worldwide, Europe, Asia and US state views', 'Many more attractions in every city, each with its own photo', 'Restaurants, bars, cafés, clubs and terraces on every city page'],
       },
       {
         tab: 'Plan',
@@ -107,7 +107,7 @@ const en = {
   extras: {
     eyebrow: 'New in GoWorth',
     title: 'Your trips, long after you land.',
-    lead: 'Trips you plan together and side by side, a passport that fills with every country, story cards to share where you have been, live weather where you are going, a boarding pass on your home and Lock Screen, and your trips even without signal.',
+    lead: 'Trips you plan together and side by side, expenses that split themselves, a passport that fills with every country, story cards to share where you have been, a month of Premium for every friend you bring, live weather, a boarding pass on your Lock Screen and your trips even without signal.',
     passport: {
       title: 'A visa for every country',
       body: 'Finish a trip and its countries arrive as visas in your own passport, with an entry stamp for every return visit. Turn the pages to relive where you have been.',
@@ -163,6 +163,28 @@ const en = {
         { name: 'Kyoto · Tokyo', dates: '14 – 26 Oct', tag: 'Solo' },
       ],
     },
+    split: {
+      title: 'Split it, then settle up',
+      body: 'Log who paid and whom each expense is for: everyone, a few of you or just one person. GoWorth works out who owes whom in as few payments as possible; mark one paid and the balance updates for the whole group.',
+      label: 'Settle up',
+      owes: 'pays',
+      paid: 'Mark paid',
+      balance: 'You are owed',
+      square: 'Everyone else is square',
+    },
+    invite: {
+      title: 'Invite a friend, both win Premium',
+      body: 'Every account has its own invite code. When a friend signs up with it, or enters it within 14 days, you each get a month of Premium, added after any Premium you already have. Earn up to 12 months a year.',
+      label: 'Your code',
+      share: 'Share your code',
+      friends: 'friends joined',
+      months: 'months earned',
+    },
+    venues: {
+      title: 'Where to eat and drink, in every city',
+      body: 'City pages now go past the landmarks: switch to restaurants, bars and pubs, cafés, clubs or terraces with outdoor seating, each with a photo of the place itself.',
+      chips: ['Restaurants', 'Bars & Pubs', 'Cafés', 'Clubs', 'Terraces'],
+    },
   },
   plans: {
     eyebrow: 'GoWorth Premium',
@@ -194,6 +216,7 @@ const en = {
       'One spin every 24 hours, timed on our server, not your device clock',
       'A month won while Premium is active is added after its end date',
       'Won and bought Premium count together: you get whichever lasts longer',
+      'Invite a friend and you both get a month on top, up to 12 a year',
     ],
     rules: 'Read the Premium & wheel rules',
   },
@@ -203,7 +226,7 @@ const en = {
     items: [
       {
         q: 'Is GoWorth free?',
-        a: 'Yes. The app is free to download and use. The Free plan includes one active trip, one new trip and five new saved places every month, one companion on the trips you organise and the Postcard story card. Premium removes these limits and adds several trips side by side, offline trips, the passport with rare stamps, Route and Passport story cards and the Lock Screen widget: you can buy it monthly, yearly or once for Lifetime, or win it on the daily wheel.',
+        a: 'Yes. The app is free to download and use. The Free plan includes one active trip, one new trip and five new saved places every month, one companion on the trips you organise and the Postcard story card. Premium removes these limits and adds several trips side by side, offline trips, the passport with rare stamps, Route and Passport story cards and the Lock Screen widget: you can buy it monthly, yearly or once for Lifetime, or win it on the daily wheel and by inviting friends.',
       },
       {
         q: 'How do I buy or cancel Premium?',
@@ -219,7 +242,15 @@ const en = {
       },
       {
         q: 'Can I plan a trip with friends?',
-        a: 'Yes. Choose a username, then invite companions from your trip by their username or name. Nobody joins without accepting, and everyone on the trip can edit its dates, cities, itinerary, budget and expenses. Your saved places, journal and other trips stay private. When the trip ends, each companion gets a copy in their journal and the visas for its countries. Free trips include one companion; Premium has no limit.',
+        a: 'Yes. Choose a username, then invite companions from your trip by their username or name. Nobody joins without accepting, and everyone on the trip can edit its dates, cities, itinerary, budget and expenses, and sees who owes whom. Your saved places, journal and other trips stay private. When the trip ends, each companion gets a copy in their journal and the visas for its countries. Free trips include one companion; Premium has no limit.',
+      },
+      {
+        q: 'How does splitting expenses work?',
+        a: 'On a trip with companions, each expense records who paid and whom it is for: everyone, a few people or one person. Settle up shows your share, what you owe or are owed, and the fewest payments that make everyone square. When someone pays you back, tap Mark paid; you can undo it. Everyone on the trip sees the same balances.',
+      },
+      {
+        q: 'How do invite codes work?',
+        a: 'Open Invite friends in your Profile and share your 6-character code. A friend who enters it when creating an account, or within 14 days, wins a month of Premium, and so do you. The month starts right away or after any Premium you already have. You can earn up to 12 months a year this way; your friends always get theirs.',
       },
       {
         q: 'Can I share my trip?',
@@ -317,7 +348,7 @@ const ro: Dict = {
         tab: 'Explorează',
         title: 'Toată lumea pe o singură hartă',
         body: 'Rotește globul, sari la o regiune sau caută orice țară, oraș sau loc. Când alegi unul, apar lucrurile care merită văzute în jur.',
-        points: ['Vederi Mondial, Europa, Asia și state SUA', 'Căutare cu OpenStreetMap', 'Mult mai multe atracții în fiecare oraș, fiecare cu fotografia ei'],
+        points: ['Vederi Mondial, Europa, Asia și state SUA', 'Mult mai multe atracții în fiecare oraș, fiecare cu fotografia ei', 'Restaurante, baruri, cafenele, cluburi și terase pe pagina fiecărui oraș'],
       },
       {
         tab: 'Planifică',
@@ -388,7 +419,7 @@ const ro: Dict = {
   extras: {
     eyebrow: 'Nou în GoWorth',
     title: 'Călătoriile tale, mult după aterizare.',
-    lead: 'Călătorii planificate împreună și în paralel, un pașaport care se umple cu fiecare țară, carduri de distribuit cu locurile prin care ai fost, vremea de acum la destinație, o carte de îmbarcare pe ecranul principal și de blocare, și călătoriile tale chiar și fără semnal.',
+    lead: 'Călătorii planificate împreună și în paralel, cheltuieli care se împart singure, un pașaport care se umple cu fiecare țară, carduri de distribuit cu locurile prin care ai fost, o lună de Premium pentru fiecare prieten adus, vremea de acum, o carte de îmbarcare pe ecranul de blocare și călătoriile tale chiar și fără semnal.',
     passport: {
       title: 'O viză pentru fiecare țară',
       body: 'Încheie o călătorie și țările ei apar ca vize în propriul tău pașaport, cu o ștampilă de intrare la fiecare revenire. Întoarce paginile și retrăiește locurile prin care ai fost.',
@@ -444,6 +475,28 @@ const ro: Dict = {
         { name: 'Kyoto · Tokyo', dates: '14 – 26 oct.', tag: 'Solo' },
       ],
     },
+    split: {
+      title: 'Împărțiți, apoi faceți decontarea',
+      body: 'Notează cine a plătit și pentru cine e fiecare cheltuială: pentru toți, pentru câțiva sau doar pentru o persoană. GoWorth calculează cine cui datorează, în cât mai puține plăți; marchează una plătită și soldul se actualizează pentru tot grupul.',
+      label: 'Decontare',
+      owes: 'îi plătește lui',
+      paid: 'Marchează plătit',
+      balance: 'Ți se datorează',
+      square: 'Restul grupului e chit',
+    },
+    invite: {
+      title: 'Invită un prieten, câștigați amândoi Premium',
+      body: 'Fiecare cont are propriul cod de invitație. Când un prieten își face cont cu el sau îl introduce în 14 zile, primiți fiecare o lună de Premium, adăugată după orice Premium aveți deja. Până la 12 luni pe an.',
+      label: 'Codul tău',
+      share: 'Trimite codul',
+      friends: 'prieteni s-au alăturat',
+      months: 'luni câștigate',
+    },
+    venues: {
+      title: 'Unde mănânci și bei, în fiecare oraș',
+      body: 'Paginile orașelor merg acum dincolo de obiective: treci la restaurante, baruri și puburi, cafenele, cluburi sau terase cu locuri afară, fiecare cu o fotografie a locului.',
+      chips: ['Restaurante', 'Baruri și puburi', 'Cafenele', 'Cluburi', 'Terase'],
+    },
   },
   plans: {
     eyebrow: 'GoWorth Premium',
@@ -475,6 +528,7 @@ const ro: Dict = {
       'O învârtire la 24 de ore, cronometrată pe serverul nostru, nu pe ceasul telefonului',
       'O lună câștigată cât Premium e activ se adaugă după data de expirare',
       'Premium câștigat și cel cumpărat se cumulează: primești varianta care durează mai mult',
+      'Invită un prieten și primiți amândoi încă o lună, până la 12 pe an',
     ],
     rules: 'Citește regulile Premium și ale roții',
   },
@@ -484,7 +538,7 @@ const ro: Dict = {
     items: [
       {
         q: 'GoWorth este gratuită?',
-        a: 'Da. Aplicația se descarcă și se folosește gratuit. Planul Gratuit include o călătorie activă, o călătorie nouă și cinci locuri noi salvate în fiecare lună, un însoțitor în călătoriile pe care le organizezi și cardul Carte poștală. Premium elimină aceste limite și adaugă mai multe călătorii în paralel, călătorii offline, pașaportul cu ștampile rare, cardurile Traseu și Pașaport și widgetul de pe ecranul de blocare: îl poți cumpăra lunar, anual sau o singură dată pe viață, ori îl poți câștiga la roata zilnică.',
+        a: 'Da. Aplicația se descarcă și se folosește gratuit. Planul Gratuit include o călătorie activă, o călătorie nouă și cinci locuri noi salvate în fiecare lună, un însoțitor în călătoriile pe care le organizezi și cardul Carte poștală. Premium elimină aceste limite și adaugă mai multe călătorii în paralel, călătorii offline, pașaportul cu ștampile rare, cardurile Traseu și Pașaport și widgetul de pe ecranul de blocare: îl poți cumpăra lunar, anual sau o singură dată pe viață, ori îl poți câștiga la roata zilnică și invitând prieteni.',
       },
       {
         q: 'Cum cumpăr sau anulez Premium?',
@@ -500,7 +554,15 @@ const ro: Dict = {
       },
       {
         q: 'Pot planifica o călătorie cu prietenii?',
-        a: 'Da. Alege-ți un nume de utilizator, apoi invită însoțitori din călătorie după numele lor de utilizator sau de profil. Nimeni nu intră fără să accepte, iar toți cei din călătorie îi pot edita datele, orașele, itinerariul, bugetul și cheltuielile. Locurile salvate, jurnalul și celelalte călătorii rămân private. La final, fiecare însoțitor primește o copie în jurnal și vizele pentru țările ei. Călătoriile gratuite includ un însoțitor; cu Premium nu există limită.',
+        a: 'Da. Alege-ți un nume de utilizator, apoi invită însoțitori din călătorie după numele lor de utilizator sau de profil. Nimeni nu intră fără să accepte, iar toți cei din călătorie îi pot edita datele, orașele, itinerariul, bugetul și cheltuielile și văd cine cui datorează. Locurile salvate, jurnalul și celelalte călătorii rămân private. La final, fiecare însoțitor primește o copie în jurnal și vizele pentru țările ei. Călătoriile gratuite includ un însoțitor; cu Premium nu există limită.',
+      },
+      {
+        q: 'Cum funcționează împărțirea cheltuielilor?',
+        a: 'Într-o călătorie cu însoțitori, fiecare cheltuială reține cine a plătit și pentru cine e: pentru toți, pentru câțiva sau pentru o singură persoană. Decontarea arată partea ta, cât datorezi sau ți se datorează și cele mai puține plăți prin care toată lumea ajunge chit. Când cineva îți dă banii înapoi, atinge Marchează plătit; poți anula oricând. Toți cei din călătorie văd aceleași solduri.',
+      },
+      {
+        q: 'Cum funcționează codurile de invitație?',
+        a: 'Deschide Invită prieteni din Profil și trimite codul tău de 6 caractere. Un prieten care îl introduce când își face cont sau în următoarele 14 zile câștigă o lună de Premium, la fel și tu. Luna începe imediat sau după orice Premium ai deja. Poți câștiga astfel până la 12 luni pe an; prietenii tăi primesc mereu luna lor.',
       },
       {
         q: 'Îmi pot distribui călătoria?',
