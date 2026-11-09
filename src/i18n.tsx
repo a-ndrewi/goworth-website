@@ -107,7 +107,15 @@ const en = {
   extras: {
     eyebrow: 'New in GoWorth',
     title: 'Your trips, long after you land.',
-    lead: 'Trips you plan together and side by side, expenses that split themselves, a passport that fills with every country, story cards to share where you have been, a month of Premium for every friend you bring, live weather, a boarding pass on your Lock Screen and your trips even without signal.',
+    lead: 'A recap of your whole year in travel, trips you plan together and side by side, expenses that split themselves, a passport that fills with every country, story cards to share where you have been, a month of Premium for every friend you bring, live weather, a boarding pass on your Lock Screen and your trips even without signal.',
+    wrapped: {
+      title: 'Your year in travel',
+      body: 'From November, GoWorth sums up your year page by page: trips, days away, countries and the ones you saw for the first time, kilometres between your stops, your country of the year and your travel style. It ends in a story card to share, on light or dark paper. Trips, days and countries are free; the rest comes with Premium.',
+      label: 'Days away, month by month',
+      months: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+      stats: [['8', 'Trips'], ['8', 'Countries'], ['6,410', 'Km'], ['Japan', 'Country of the year']],
+      persona: 'The Explorer',
+    },
     passport: {
       title: 'A visa for every country',
       body: 'Finish a trip and its countries arrive as visas in your own passport, with an entry stamp for every return visit. Turn the pages to relive where you have been.',
@@ -150,7 +158,7 @@ const en = {
     },
     share: {
       title: 'Share it as a story',
-      body: 'Turn a trip into a 9:16 card for Instagram, TikTok or Messages: a postcard coloured after the country, your route on the map, or a visa page. Spending stays hidden unless you show it, and your whole passport can go out as one card. The Postcard style is free; Route and Passport come with Premium.',
+      body: 'Turn a trip into a 9:16 card for Instagram, TikTok or Messages: a postcard coloured after the country, your route on the map, or a visa page. Spending stays hidden unless you show it, and your whole passport can go out as one card, on light or dark paper. The Postcard style is free; Route and Passport come with Premium.',
       styles: ['Postcard', 'Route', 'Passport'],
       spending: 'Show spending',
     },
@@ -190,7 +198,7 @@ const en = {
     eyebrow: 'GoWorth Premium',
     title: 'Travel without limits.',
     lead: 'The Free plan covers one active trip, 1 new trip and 5 new saved places every month, with 1 companion on the trips you organise. Premium removes the limits, on every device signed in to your account.',
-    perks: ['Your passport, with a visa for every country you visit', 'Unlimited companions on every trip', 'Several trips side by side, no monthly limit', 'Unlimited saved places', 'Your trips offline, even in airplane mode', 'Rare stamps for every travel milestone', 'Route and passport story cards to share', 'Lock Screen widget for your current trip on iPhone'],
+    perks: ['Your passport, with a visa for every country you visit', 'Unlimited companions on every trip', 'Several trips side by side, no monthly limit', 'Unlimited saved places', 'Your trips offline, even in airplane mode', 'Rare stamps for every travel milestone', 'Route and passport story cards to share', 'Your full year in travel: kilometres, country of the year and travel style', 'Lock Screen widget for your current trip on iPhone'],
     bestValue: 'Best value',
     items: [
       { id: 'monthly', name: 'Monthly', note: 'Billed every month', unit: 'Renews monthly' },
@@ -254,7 +262,11 @@ const en = {
       },
       {
         q: 'Can I share my trip?',
-        a: 'Yes. From a trip or your journal, tap Share and pick a style: Postcard, Route or Passport. The card is made on your phone and goes straight to the share sheet, ready for Instagram, TikTok, Messages or Photos; on Android, take a screenshot of the card. Spending appears only if you turn it on. Postcard is free; Route, Passport and sharing your whole passport come with Premium.',
+        a: 'Yes. From a trip or your journal, tap Share and pick a style: Postcard, Route or Passport. The card is made on your phone and goes straight to the share sheet, ready for Instagram, TikTok, Messages or Photos; on Android, take a screenshot of the card. Spending appears only if you turn it on. Postcard is free; Route, Passport and sharing your whole passport come with Premium. Your passport card can be shared on light or dark paper.',
+      },
+      {
+        q: 'What is Your year in travel?',
+        a: 'From November 1 through January, Profile shows a recap of your year built from the trips you finished: trips, days away, countries and the new ones, kilometres between your stops, your country of the year and your travel style. We also remind you on December 1. It is worked out on your phone from your own trips. Trips, days and countries are free; distance, country of the year and travel style come with Premium. The last page shares your year as a story card, on light or dark paper.',
       },
       {
         q: 'What do “Places near you” notifications do?',
@@ -419,7 +431,15 @@ const ro: Dict = {
   extras: {
     eyebrow: 'Nou în GoWorth',
     title: 'Călătoriile tale, mult după aterizare.',
-    lead: 'Călătorii planificate împreună și în paralel, cheltuieli care se împart singure, un pașaport care se umple cu fiecare țară, carduri de distribuit cu locurile prin care ai fost, o lună de Premium pentru fiecare prieten adus, vremea de acum, o carte de îmbarcare pe ecranul de blocare și călătoriile tale chiar și fără semnal.',
+    lead: 'Un rezumat al întregului tău an în călătorii, călătorii planificate împreună și în paralel, cheltuieli care se împart singure, un pașaport care se umple cu fiecare țară, carduri de distribuit cu locurile prin care ai fost, o lună de Premium pentru fiecare prieten adus, vremea de acum, o carte de îmbarcare pe ecranul de blocare și călătoriile tale chiar și fără semnal.',
+    wrapped: {
+      title: 'Anul tău în călătorii',
+      body: 'Din noiembrie, GoWorth îți rezumă anul pagină cu pagină: călătorii, zile departe de casă, țări și cele văzute pentru prima dată, kilometrii dintre opriri, țara anului și stilul tău de călătorie. La final primești un card de distribuit, pe hârtie luminoasă sau întunecată. Călătoriile, zilele și țările sunt gratuite; restul vine cu Premium.',
+      label: 'Zile plecat, lună de lună',
+      months: ['I', 'F', 'M', 'A', 'M', 'I', 'I', 'A', 'S', 'O', 'N', 'D'],
+      stats: [['8', 'Călătorii'], ['8', 'Țări'], ['6.410', 'Km'], ['Japonia', 'Țara anului']],
+      persona: 'Exploratorul',
+    },
     passport: {
       title: 'O viză pentru fiecare țară',
       body: 'Încheie o călătorie și țările ei apar ca vize în propriul tău pașaport, cu o ștampilă de intrare la fiecare revenire. Întoarce paginile și retrăiește locurile prin care ai fost.',
@@ -462,7 +482,7 @@ const ro: Dict = {
     },
     share: {
       title: 'Distribuie-o ca story',
-      body: 'Transformă o călătorie într-un card 9:16 pentru Instagram, TikTok sau Mesaje: o carte poștală în culorile țării, traseul tău pe hartă sau o pagină de viză. Cheltuielile rămân ascunse dacă nu le arăți, iar tot pașaportul poate pleca într-un singur card. Stilul Carte poștală este gratuit; Traseu și Pașaport vin cu Premium.',
+      body: 'Transformă o călătorie într-un card 9:16 pentru Instagram, TikTok sau Mesaje: o carte poștală în culorile țării, traseul tău pe hartă sau o pagină de viză. Cheltuielile rămân ascunse dacă nu le arăți, iar tot pașaportul poate pleca într-un singur card, pe hârtie luminoasă sau întunecată. Stilul Carte poștală este gratuit; Traseu și Pașaport vin cu Premium.',
       styles: ['Carte poștală', 'Traseu', 'Pașaport'],
       spending: 'Arată cheltuielile',
     },
@@ -502,7 +522,7 @@ const ro: Dict = {
     eyebrow: 'GoWorth Premium',
     title: 'Călătorește fără limite.',
     lead: 'Planul Gratuit include o călătorie activă, 1 călătorie nouă și 5 locuri noi salvate în fiecare lună, plus 1 însoțitor în călătoriile pe care le organizezi. Premium elimină limitele, pe orice dispozitiv conectat la contul tău.',
-    perks: ['Pașaportul tău, cu o viză pentru fiecare țară vizitată', 'Însoțitori nelimitați în fiecare călătorie', 'Mai multe călătorii în paralel, fără limită lunară', 'Locuri salvate nelimitate', 'Călătoriile tale offline, chiar și în modul avion', 'Ștampile rare pentru fiecare reper din călătorii', 'Carduri cu traseul și pașaportul, de distribuit', 'Widgetul călătoriei curente pe ecranul de blocare al iPhone-ului'],
+    perks: ['Pașaportul tău, cu o viză pentru fiecare țară vizitată', 'Însoțitori nelimitați în fiecare călătorie', 'Mai multe călătorii în paralel, fără limită lunară', 'Locuri salvate nelimitate', 'Călătoriile tale offline, chiar și în modul avion', 'Ștampile rare pentru fiecare reper din călătorii', 'Carduri cu traseul și pașaportul, de distribuit', 'Tot anul tău în călătorii: kilometri, țara anului și stilul tău', 'Widgetul călătoriei curente pe ecranul de blocare al iPhone-ului'],
     bestValue: 'Cea mai bună ofertă',
     items: [
       { id: 'monthly', name: 'Lunar', note: 'Facturat lunar', unit: 'Se reînnoiește lunar' },
@@ -566,7 +586,11 @@ const ro: Dict = {
       },
       {
         q: 'Îmi pot distribui călătoria?',
-        a: 'Da. Dintr-o călătorie sau din jurnal, atinge Distribuie și alege un stil: Carte poștală, Traseu sau Pașaport. Cardul este creat pe telefon și ajunge direct în meniul de distribuire, gata pentru Instagram, TikTok, Mesaje sau Poze; pe Android, fă o captură de ecran a cardului. Cheltuielile apar doar dacă le activezi. Carte poștală este gratuit; Traseu, Pașaport și distribuirea întregului pașaport vin cu Premium.',
+        a: 'Da. Dintr-o călătorie sau din jurnal, atinge Distribuie și alege un stil: Carte poștală, Traseu sau Pașaport. Cardul este creat pe telefon și ajunge direct în meniul de distribuire, gata pentru Instagram, TikTok, Mesaje sau Poze; pe Android, fă o captură de ecran a cardului. Cheltuielile apar doar dacă le activezi. Carte poștală este gratuit; Traseu, Pașaport și distribuirea întregului pașaport vin cu Premium. Cardul pașaportului poate fi distribuit pe hârtie luminoasă sau întunecată.',
+      },
+      {
+        q: 'Ce este Anul tău în călătorii?',
+        a: 'Din 1 noiembrie până la finalul lui ianuarie, Profilul îți arată un rezumat al anului făcut din călătoriile încheiate: călătorii, zile departe de casă, țări și cele noi, kilometrii dintre opriri, țara anului și stilul tău de călătorie. Îți amintim și pe 1 decembrie. Totul se calculează pe telefon, din propriile călătorii. Călătoriile, zilele și țările sunt gratuite; distanța, țara anului și stilul vin cu Premium. Ultima pagină îți distribuie anul ca un card story, pe hârtie luminoasă sau întunecată.',
       },
       {
         q: 'Ce fac notificările „Locuri în apropiere”?',

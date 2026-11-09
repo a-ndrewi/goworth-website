@@ -1,4 +1,4 @@
-import { ArrowRight, Award, Bell, BookOpen, CalendarDays, Check, CloudSun, Coffee, Crown, Gift, Layers, Martini, Music, Plane, RefreshCw, Share2, Smartphone, Sun, Users, Utensils, WalletCards, WifiOff } from 'lucide-react'
+import { ArrowRight, Award, Bell, BarChart3, BookOpen, CalendarDays, Check, CloudSun, Coffee, Crown, Gift, Layers, Lock, Martini, Music, Plane, RefreshCw, Share2, Smartphone, Sun, Users, Utensils, WalletCards, WifiOff } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Reveal, SectionHeading } from '../components/ui'
 import { useI18n } from '../i18n'
@@ -282,6 +282,53 @@ function VenuesArt() {
   )
 }
 
+/** Days away per month in a sample year; the busiest one is drawn in brand blue, as in the app. */
+const recapMonths = [0, 4, 6, 5, 0, 7, 6, 11, 5, 4, 0, 0]
+
+/** The recap as the app shows it: the month chart, the year in numbers and the travel-style stamp. */
+function WrappedArt() {
+  const { t } = useI18n()
+  const x = t.extras.wrapped
+  const peak = Math.max(...recapMonths)
+  return (
+    <div className="mt-6 grid gap-4 md:grid-cols-[1.4fr_1fr_auto] md:items-stretch">
+      <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+        <p className="text-[10px] font-bold tracking-widest text-muted uppercase">{x.label}</p>
+        <div className="mt-3 flex h-24 items-end gap-1.5">
+          {recapMonths.map((days, month) => (
+            <div key={month} className="flex h-full flex-1 flex-col items-center gap-1">
+              <div className="flex w-full flex-1 items-end overflow-hidden rounded-md bg-white/[0.05]">
+                <div className={`w-full rounded-md ${days === peak ? 'bg-brand' : 'bg-brand/35'}`} style={{ height: `${(days / peak) * 100}%` }} />
+              </div>
+              <span className={`text-[10px] font-bold ${days === peak ? 'text-white' : 'text-muted'}`}>{x.months[month]}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-2">
+        {x.stats.map(([value, label], n) => (
+          <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5">
+            <p className="flex items-center gap-1 font-display text-2xl font-extrabold text-white tabular-nums">
+              {value}
+              {n >= 2 && <Lock className="size-3 text-[#F5C451]" />}
+            </p>
+            <p className="text-[10px] font-bold tracking-wider text-muted uppercase">{label}</p>
+          </div>
+        ))}
+      </div>
+      <div className="flex items-center justify-center">
+        <div className="flex size-36 -rotate-6 items-center justify-center rounded-full border-[3px] border-brand p-1.5">
+          <div className="flex size-full flex-col items-center justify-center gap-1 rounded-full border-[1.5px] border-dashed border-brand px-3 text-center text-brand">
+            <span className="text-[9px] font-black tracking-[0.2em]">★ 2026 ★</span>
+            <span className="font-display text-sm leading-tight font-extrabold uppercase">{x.persona}</span>
+            <span className="text-[9px] font-black tracking-[0.2em]">GOWORTH</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const weather = [
   { city: 'Paris', temp: '14°' },
   { city: 'Lisboa', temp: '21°' },
@@ -296,6 +343,9 @@ export function Extras() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading eyebrow={x.eyebrow} title={x.title} lead={x.lead} />
         <div className="mt-16 grid gap-5 md:grid-cols-6">
+          <Tile icon={<BarChart3 className="size-5" />} title={x.wrapped.title} body={x.wrapped.body} className="md:col-span-6">
+            <WrappedArt />
+          </Tile>
           <Tile icon={<BookOpen className="size-5" />} title={x.passport.title} body={x.passport.body} className="md:col-span-4">
             <PassportArt />
           </Tile>
